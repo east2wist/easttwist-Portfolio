@@ -1,106 +1,1347 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>East Twist | Digital Marketing Agency</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>East Twist | إيست تويست</title>
+  <meta name="description" content="إيست تويست للدعاية والإعلان والتسويق الإلكتروني - إدارة سوشيال ميديا، تصوير، تصميم، إعلانات ممولة، هوية بصرية، مواقع إلكترونية، وتغطية إعلامية." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
+    :root{
+      --bg:#f0eee7;
+      --bg-soft:#ebe6db;
+      --dark:#231f20;
+      --brown:#2d2824;
+      --gold:#b79d65;
+      --white:#ffffff;
+      --icon:#b79d65;
+      --shadow:0 10px 30px rgba(35,31,32,0.10);
+      --radius:22px;
+      --transition:0.3s ease;
     }
 
-    header {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(135deg,#0970b8,#0f172a);
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
     }
 
-    h1 {
-      font-size: 50px;
-      margin-bottom: 20px;
+    html{
+      scroll-behavior:smooth;
     }
 
-    p {
-      font-size: 20px;
-      max-width: 700px;
-      margin: auto;
+    body{
+      font-family:"Changa", sans-serif;
+      background:var(--bg);
+      color:var(--dark);
+      line-height:1.8;
+      overflow-x:hidden;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background: #ffce09;
-      color: black;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
+    a{
+      text-decoration:none;
+      color:inherit;
     }
 
-    section {
-      padding: 60px 20px;
-      text-align: center;
+    img{
+      max-width:100%;
+      display:block;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
+    .container{
+      width:min(1180px, 92%);
+      margin:auto;
     }
 
-    .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 15px;
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(240,238,231,0.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(183,157,101,0.18);
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #020617;
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      color:var(--brown);
+      font-size:1.2rem;
+    }
+
+    .brand-mark{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--gold),var(--brown));
+      display:grid;
+      place-items:center;
+      color:var(--bg);
+      font-weight:800;
+      box-shadow:var(--shadow);
+      flex-shrink:0;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:var(--brown);
+      font-weight:500;
+      transition:var(--transition);
+      position:relative;
+    }
+
+    .nav-links a:hover{
+      color:var(--gold);
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border:none;
+      border-radius:999px;
+      padding:14px 22px;
+      cursor:pointer;
+      font-family:inherit;
+      font-weight:700;
+      transition:var(--transition);
+    }
+
+    .btn-primary{
+      background:var(--gold);
+      color:var(--brown);
+      box-shadow:0 10px 25px rgba(183,157,101,0.25);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      background:var(--brown);
+      color:var(--bg);
+    }
+
+    .btn-outline{
+      background:transparent;
+      color:var(--brown);
+      border:1.5px solid rgba(45,40,36,0.18);
+    }
+
+    .btn-outline:hover{
+      border-color:var(--gold);
+      color:var(--gold);
+    }
+
+    .hero{
+      padding:72px 0 48px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .hero-card{
+      background:linear-gradient(135deg, rgba(45,40,36,0.98), rgba(35,31,32,0.96));
+      color:var(--bg);
+      padding:42px;
+      border-radius:32px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -60px -60px auto;
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(183,157,101,0.28), transparent 65%);
+    }
+
+    .hero-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(183,157,101,0.12);
+      border:1px solid rgba(183,157,101,0.25);
+      color:var(--gold);
+      font-size:0.92rem;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      font-size:clamp(2rem, 4vw, 4rem);
+      line-height:1.25;
+      margin-bottom:16px;
+      font-weight:800;
+    }
+
+    .hero p{
+      font-size:1.05rem;
+      color:rgba(240,238,231,0.88);
+      max-width:760px;
+      margin-bottom:24px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:28px;
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:10px;
+    }
+
+    .stat{
+      background:rgba(240,238,231,0.06);
+      border:1px solid rgba(183,157,101,0.18);
+      border-radius:22px;
+      padding:18px 14px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.4rem;
+      color:var(--gold);
+      margin-bottom:4px;
+    }
+
+    .hero-side{
+      display:grid;
+      gap:20px;
+    }
+
+    .glass-card{
+      background:var(--white);
+      border:1px solid rgba(183,157,101,0.16);
+      border-radius:28px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .section{
+      padding:40px 0 12px;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:20px;
+      margin-bottom:24px;
+      flex-wrap:wrap;
+    }
+
+    .section-head h2{
+      font-size:clamp(1.5rem, 3vw, 2.4rem);
+      color:var(--brown);
+      line-height:1.3;
+    }
+
+    .section-head p{
+      max-width:680px;
+      color:#5c514c;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:8px;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .service-card{
+      background:var(--white);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(183,157,101,0.14);
+      transition:var(--transition);
+    }
+
+    .service-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(183,157,101,0.35);
+    }
+
+    .icon-wrap{
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      background:rgba(183,157,101,0.12);
+      display:grid;
+      place-items:center;
+      color:var(--icon);
+      margin-bottom:16px;
+    }
+
+    .service-card h3{
+      margin-bottom:10px;
+      color:var(--brown);
+      font-size:1.15rem;
+    }
+
+    .service-card p{
+      color:#5f5652;
+      font-size:0.97rem;
+    }
+
+    .portfolio{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .portfolio-card{
+      position:relative;
+      min-height:250px;
+      border-radius:26px;
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(35,31,32,0.08), rgba(35,31,32,0.82)),
+        linear-gradient(135deg, rgba(183,157,101,0.75), rgba(45,40,36,0.95));
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:end;
+      padding:24px;
+    }
+
+    .portfolio-card h3{
+      color:var(--bg);
+      margin-bottom:8px;
+      font-size:1.2rem;
+    }
+
+    .portfolio-card p{
+      color:rgba(240,238,231,0.9);
+      font-size:0.95rem;
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .why-item{
+      background:var(--white);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(183,157,101,0.14);
+    }
+
+    .why-item h3{
+      color:var(--brown);
+      margin-bottom:8px;
+    }
+
+    .why-item p{
+      color:#5f5652;
+    }
+
+    .partners-box{
+      background:linear-gradient(135deg, rgba(183,157,101,0.10), rgba(45,40,36,0.04));
+      border:1px solid rgba(183,157,101,0.16);
+      border-radius:30px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .partners-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:14px;
+      margin-top:16px;
+    }
+
+    .partner{
+      min-height:92px;
+      border-radius:20px;
+      background:var(--white);
+      border:1px dashed rgba(183,157,101,0.32);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:var(--gold);
+      font-weight:700;
+      padding:16px;
+    }
+
+    .social-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:14px;
+    }
+
+    .social-card{
+      background:var(--white);
+      border-radius:22px;
+      padding:22px 16px;
+      text-align:center;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(183,157,101,0.14);
+      transition:var(--transition);
+    }
+
+    .social-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(183,157,101,0.34);
+    }
+
+    .social-card .icon-wrap{
+      margin:0 auto 12px;
+    }
+
+    .social-card span{
+      display:block;
+      color:var(--brown);
+      font-weight:700;
+      font-size:0.95rem;
+    }
+
+    .cta{
+      padding:44px 0 70px;
+    }
+
+    .cta-card{
+      background:linear-gradient(135deg, var(--brown), var(--dark));
+      color:var(--bg);
+      border-radius:34px;
+      padding:38px;
+      box-shadow:var(--shadow);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+
+    .cta-card h2{
+      font-size:clamp(1.7rem, 3vw, 2.6rem);
+      margin-bottom:10px;
+    }
+
+    .cta-card p{
+      max-width:700px;
+      color:rgba(240,238,231,0.86);
+    }
+
+    footer{
+      padding:30px 0 38px;
+      border-top:1px solid rgba(183,157,101,0.18);
+      color:#685d58;
+    }
+
+    .footer-grid{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .lang-toggle{
+      min-width:114px;
+    }
+
+    .mobile-menu-btn{
+      display:none;
+      background:none;
+      border:none;
+      color:var(--brown);
+      cursor:pointer;
+    }
+
+    .hide-en{ display:block; }
+    .hide-ar{ display:none; }
+
+    body.en{
+      direction:ltr;
+    }
+
+    body.en .hide-en{ display:none; }
+    body.en .hide-ar{ display:block; }
+
+    body.en .nav,
+    body.en .section-head,
+    body.en .cta-card,
+    body.en .footer-grid{
+      direction:ltr;
+    }
+
+    body.en .hero-card,
+    body.en .glass-card,
+    body.en .service-card,
+    body.en .why-item,
+    body.en .social-card,
+    body.en .partner{
+      text-align:left;
+    }
+
+    body:not(.en) .hero-card,
+    body:not(.en) .glass-card,
+    body:not(.en) .service-card,
+    body:not(.en) .why-item,
+    body:not(.en) .social-card,
+    body:not(.en) .partner{
+      text-align:right;
+    }
+
+    @media (max-width: 1100px){
+      .services-grid,
+      .portfolio{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .partners-grid{
+        grid-template-columns:repeat(3,1fr);
+      }
+
+      .social-grid{
+        grid-template-columns:repeat(3,1fr);
+      }
+    }
+
+    @media (max-width: 900px){
+      .hero-grid,
+      .services-grid,
+      .portfolio,
+      .why-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-stats{
+        grid-template-columns:1fr;
+      }
+
+      .nav{
+        align-items:flex-start;
+        padding:14px 0;
+      }
+
+      .nav-links{
+        width:100%;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        background:var(--white);
+        padding:16px;
+        border-radius:18px;
+        box-shadow:var(--shadow);
+        margin-top:10px;
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .mobile-menu-btn{
+        display:block;
+      }
+
+      .nav-wrap{
+        width:100%;
+      }
+
+      .nav-actions{
+        margin-inline-start:auto;
+      }
+    }
+
+    @media (max-width: 680px){
+      .partners-grid,
+      .social-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .hero-card,
+      .glass-card,
+      .service-card,
+      .why-item,
+      .cta-card,
+      .partners-box{
+        padding:22px;
+      }
+
+      .hero{
+        padding-top:34px;
+      }
+
+      .hero h1{
+        font-size:2.1rem;
+      }
+
+      .section{
+        padding-top:28px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+      }
+
+      .cta-card{
+        text-align:center;
+      }
+    }
+
+    @media (max-width: 420px){
+      .partners-grid,
+      .social-grid{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <h1>East Twist</h1>
-  <p>We build powerful brands through digital marketing, content creation, and performance ads.</p>
-  <a class="btn" href="https://wa.me/9665XXXXXXXX">Start Now</a>
-</header>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <div class="brand-mark">ET</div>
+        <div>
+          <div class="hide-en">East Twist</div>
+          <div class="hide-ar">East Twist</div>
+        </div>
+      </a>
 
-<section>
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">Social Media Management</div>
-    <div class="card">Paid Advertising</div>
-    <div class="card">Photography & Videography</div>
-    <div class="card">Branding & Design</div>
-  </div>
-</section>
+      <div class="nav-wrap">
+        <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
 
-<section>
-  <h2>Why Choose Us?</h2>
-  <p>We don't post content… we build systems that generate leads and sales.</p>
-</section>
+        <nav class="nav-links" id="navLinks">
+          <a href="#services">
+            <span class="hide-en">الخدمات</span>
+            <span class="hide-ar">Services</span>
+          </a>
+          <a href="#portfolio">
+            <span class="hide-en">أعمالنا</span>
+            <span class="hide-ar">Portfolio</span>
+          </a>
+          <a href="#partners">
+            <span class="hide-en">شركاء النجاح</span>
+            <span class="hide-ar">Partners</span>
+          </a>
+          <a href="#social">
+            <span class="hide-en">منصاتنا</span>
+            <span class="hide-ar">Social</span>
+          </a>
+          <a href="#contact">
+            <span class="hide-en">تواصل معنا</span>
+            <span class="hide-ar">Contact</span>
+          </a>
+        </nav>
+      </div>
 
-<section>
-  <h2>Contact Us</h2>
-  <p>WhatsApp: 05XXXXXXXX</p>
-  <p>Email: info@easttwist.com</p>
-</section>
+      <div class="nav-actions">
+        <button class="btn btn-outline lang-toggle" id="langToggle">
+          العربية | EN
+        </button>
+        <a class="btn btn-primary" href="https://wa.me/966567031077" target="_blank">
+          <span class="hide-en">ابدأ مشروعك الآن</span>
+          <span class="hide-ar">Start Your Project</span>
+        </a>
+      </div>
+    </div>
+  </header>
 
-<footer>
-  <p>© 2026 East Twist. All rights reserved.</p>
-</footer>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <div class="hero-kicker">
+            <span class="hide-en">شريكك في النمو الرقمي الحقيقي</span>
+            <span class="hide-ar">Your Real Digital Growth Partner</span>
+          </div>
+
+          <h1>
+            <span class="hide-en">نحوّل حضورك الرقمي إلى صورة أقوى، محتوى أذكى، ونتائج تبيع فعلاً.</span>
+            <span class="hide-ar">We turn your digital presence into stronger branding, smarter content, and results that actually sell.</span>
+          </h1>
+
+          <p>
+            <span class="hide-en">
+              إيست تويست ليست مجرد جهة تدير حسابات التواصل الاجتماعي. نحن نبني حضورًا متكاملًا يبدأ من الهوية،
+              ويمتد إلى المحتوى، التصوير، الفيديو، الحملات الإعلانية، التغطية الإعلامية، والمواقع الإلكترونية،
+              بهدف واضح: زيادة الثقة، رفع قيمة العلامة، وتحويل الاهتمام إلى عملاء فعليين.
+            </span>
+            <span class="hide-ar">
+              East Twist is not just a social media management agency. We build a complete digital presence through branding,
+              content, photography, video production, paid advertising, media coverage, and website creation,
+              with one clear goal: build trust, elevate your brand, and convert attention into real customers.
+            </span>
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="https://wa.me/966567031077" target="_blank">
+              <span class="hide-en">تواصل واتساب الآن</span>
+              <span class="hide-ar">Chat on WhatsApp</span>
+            </a>
+            <a class="btn btn-outline" href="#services">
+              <span class="hide-en">اكتشف خدماتنا</span>
+              <span class="hide-ar">Explore Services</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>360°</strong>
+              <span class="hide-en">حلول تسويق وتنفيذ متكاملة</span>
+              <span class="hide-ar">Integrated marketing execution</span>
+            </div>
+            <div class="stat">
+              <strong>Content + Ads</strong>
+              <span class="hide-en">محتوى احترافي مدعوم بالأداء</span>
+              <span class="hide-ar">Creative backed by performance</span>
+            </div>
+            <div class="stat">
+              <strong>Brand Impact</strong>
+              <span class="hide-en">ظهور بصري أقوى يرفع الثقة</span>
+              <span class="hide-ar">Stronger visual trust & impact</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="glass-card">
+            <div class="badge">
+              <span class="hide-en">ماذا نقدم؟</span>
+              <span class="hide-ar">What We Deliver</span>
+            </div>
+            <h3 style="color:var(--brown); margin-bottom:10px;">
+              <span class="hide-en">واجهة احترافية تعكس قيمة نشاطك</span>
+              <span class="hide-ar">A professional image that reflects your value</span>
+            </h3>
+            <p style="color:#5f5652;">
+              <span class="hide-en">
+                من أول تصميم السوشيال ميديا وحتى تصوير المنتجات، الفيديوهات، الحملات، والتغطية،
+                نساعدك على الظهور بشكل يليق باسمك ويجذب العميل الصحيح.
+              </span>
+              <span class="hide-ar">
+                From social media design to product shoots, video production, campaign execution, and media coverage,
+                we help you appear at the level your brand deserves.
+              </span>
+            </p>
+          </div>
+
+          <div class="glass-card">
+            <div class="badge">
+              <span class="hide-en">لماذا إيست تويست؟</span>
+              <span class="hide-ar">Why East Twist</span>
+            </div>
+            <h3 style="color:var(--brown); margin-bottom:10px;">
+              <span class="hide-en">لأننا نجمع بين الإبداع، التنفيذ، والفهم الحقيقي للبيع</span>
+              <span class="hide-ar">Because we combine creativity, execution, and sales understanding</span>
+            </h3>
+            <p style="color:#5f5652;">
+              <span class="hide-en">
+                نحن لا نصنع محتوى جميلًا فقط، بل نصنع تجربة تسويقية متكاملة تجعل العميل يفهمك،
+                يثق بك، ويتخذ خطوة التواصل والشراء.
+              </span>
+              <span class="hide-ar">
+                We do not just create beautiful content. We create a full marketing experience that helps customers
+                understand you, trust you, and take action.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="badge">
+              <span class="hide-en">خدمات إيست تويست</span>
+              <span class="hide-ar">East Twist Services</span>
+            </div>
+            <h2>
+              <span class="hide-en">كل ما تحتاجه لتسويق أقوى وصورة أقنع</span>
+              <span class="hide-ar">Everything you need for stronger marketing and sharper brand presence</span>
+            </h2>
+          </div>
+          <p>
+            <span class="hide-en">
+              نقدّم خدمات تسويق وتنفيذ متكاملة تساعد الأنشطة التجارية على النمو، بدءًا من الاستراتيجية
+              والمحتوى وحتى التصوير والإعلانات والمواقع والتنفيذ الإبداعي.
+            </span>
+            <span class="hide-ar">
+              We provide complete marketing and creative execution services that help brands grow through strategy,
+              content, production, paid media, and digital presence.
+            </span>
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M4 19V10M12 19V5M20 19V13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>
+              <span class="hide-en">إدارة السوشيال ميديا</span>
+              <span class="hide-ar">Social Media Management</span>
+            </h3>
+            <p>
+              <span class="hide-en">إدارة احترافية للحسابات، خطط محتوى، نشر، تطوير الحضور، وصناعة صورة أكثر تميزًا وثباتًا.</span>
+              <span class="hide-ar">Professional account management, content planning, publishing, and stronger brand positioning.</span>
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M4 12H20M12 4V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>
+              <span class="hide-en">الحملات الإعلانية الممولة</span>
+              <span class="hide-ar">Paid Advertising</span>
+            </h3>
+            <p>
+              <span class="hide-en">إعلانات احترافية على Meta وInstagram وTikTok وGoogle لتحقيق وصول أفضل ونتائج أقرب للبيع.</span>
+              <span class="hide-ar">Performance-driven campaigns on Meta, Instagram, TikTok, and Google for real business outcomes.</span>
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="7" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="12" cy="13" r="3" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <h3>
+              <span class="hide-en">التصوير الفوتوغرافي</span>
+              <span class="hide-ar">Photography</span>
+            </h3>
+            <p>
+              <span class="hide-en">تصوير احترافي للمنتجات والخدمات والمطاعم والمشاريع والفعاليات لإظهار الجودة والقيمة الحقيقية.</span>
+              <span class="hide-ar">High-quality photography for products, services, restaurants, projects, and events.</span>
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M10 10L15 13L10 16V10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>
+              <span class="hide-en">تصوير الفيديو والريلز</span>
+              <span class="hide-ar">Videography & Reels</span>
+            </h3>
+            <p>
+              <span class="hide-en">فيديوهات دعائية، ريلز، تغطيات، ومونتاج احترافي مصمم لشد الانتباه ورفع التفاعل.</span>
+              <span class="hide-ar">Promotional videos, reels, coverage, and editing designed to capture attention and boost engagement.</span>
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M5 19L19 5M8 5H19V16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>
+              <span class="hide-en">التصميم الجرافيكي والهوية</span>
+              <span class="hide-ar">Graphic Design & Branding</span>
+            </h3>
+            <p>
+              <span class="hide-en">تصاميم سوشيال ميديا، مطبوعات، مواد دعائية، وهويات بصرية تجعل العلامة أكثر قوة وتماسكًا.</span>
+              <span class="hide-ar">Creative social media designs, print materials, and visual identity systems that strengthen your brand.</span>
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M8 9H16M8 13H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>
+              <span class="hide-en">تصميم وتطوير المواقع</span>
+              <span class="hide-ar">Website Design</span>
+            </h3>
+            <p>
+              <span class="hide-en">مواقع تعريفية وتجارية جذابة وسريعة وسهلة التصفح تساعد على بناء الثقة وتحويل الزائر إلى عميل.</span>
+              <span class="hide-ar">Fast, attractive, responsive websites built to impress visitors and convert them into customers.</span>
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M12 20C12 20 5 16 5 10A4 4 0 0 1 12 7A4 4 0 0 1 19 10C19 16 12 20 12 20Z" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <h3>
+              <span class="hide-en">التغطية الإعلامية والفعاليات</span>
+              <span class="hide-ar">Media Coverage & Events</span>
+            </h3>
+            <p>
+              <span class="hide-en">تغطية احترافية للفعاليات والافتتاحات والمؤتمرات والمعارض بطريقة ترفع قيمة الحدث وصورته.</span>
+              <span class="hide-ar">Professional event and activation coverage that elevates the image and reach of your event.</span>
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M9 7H17V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>
+              <span class="hide-en">إدارة خدمة العملاء والتواصل</span>
+              <span class="hide-ar">Customer Communication</span>
+            </h3>
+            <p>
+              <span class="hide-en">تنظيم الردود والمتابعة وربط التسويق بالتواصل الفعلي مع العميل لتقليل ضياع الفرص البيعية.</span>
+              <span class="hide-ar">Structured communication and follow-up workflows that support conversion and reduce lost leads.</span>
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path d="M4 18L9 13L13 16L20 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>
+              <span class="hide-en">استراتيجية تسويق متكاملة</span>
+              <span class="hide-ar">Integrated Marketing Strategy</span>
+            </h3>
+            <p>
+              <span class="hide-en">تحليل، رؤية، وتخطيط تنفيذي يربط بين المحتوى، الإعلان، الهوية، والنتائج التجارية الحقيقية.</span>
+              <span class="hide-ar">Strategic direction that aligns content, ads, branding, and business performance.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="badge">
+              <span class="hide-en">بورتفوليو إيست تويست</span>
+              <span class="hide-ar">East Twist Portfolio</span>
+            </div>
+            <h2>
+              <span class="hide-en">نماذج من نوعية الشغل الذي نبنيه للعلامات التجارية</span>
+              <span class="hide-ar">A glimpse of the kind of work we build for brands</span>
+            </h2>
+          </div>
+          <p>
+            <span class="hide-en">يمكنك لاحقًا استبدال هذه البطاقات بصور حقيقية من أعمالك أو مشاريع عملائك.</span>
+            <span class="hide-ar">You can later replace these blocks with real project images, campaigns, and portfolio visuals.</span>
+          </p>
+        </div>
+
+        <div class="portfolio">
+          <div class="portfolio-card">
+            <div>
+              <h3>
+                <span class="hide-en">تصوير منتجات وخدمات</span>
+                <span class="hide-ar">Products & Services Shoots</span>
+              </h3>
+              <p>
+                <span class="hide-en">إخراج بصري يرفع قيمة المنتج ويجعله أكثر إقناعًا وجاذبية.</span>
+                <span class="hide-ar">Visual execution that increases perceived product value and appeal.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div>
+              <h3>
+                <span class="hide-en">ريلز ومحتوى قصير</span>
+                <span class="hide-ar">Reels & Short-form Content</span>
+              </h3>
+              <p>
+                <span class="hide-en">محتوى مصمم للانتباه والتفاعل والانتشار.</span>
+                <span class="hide-ar">Content engineered for attention, engagement, and platform performance.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div>
+              <h3>
+                <span class="hide-en">هويات ومطبوعات</span>
+                <span class="hide-ar">Branding & Print</span>
+              </h3>
+              <p>
+                <span class="hide-en">حلول بصرية موحدة تجعل العلامة أكثر احترافية وثباتًا.</span>
+                <span class="hide-ar">Cohesive visual systems that strengthen brand presence and consistency.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div>
+              <h3>
+                <span class="hide-en">حملات ممولة</span>
+                <span class="hide-ar">Paid Campaigns</span>
+              </h3>
+              <p>
+                <span class="hide-en">إعلانات تدعم النمو وتفتح باب الوصول للجمهور الأنسب.</span>
+                <span class="hide-ar">Paid media that supports growth and reaches the right audience.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div>
+              <h3>
+                <span class="hide-en">تغطيات وفعاليات</span>
+                <span class="hide-ar">Events & Media Coverage</span>
+              </h3>
+              <p>
+                <span class="hide-en">نقل الحدث بصورة قوية تليق بالعلامة وتخلّي التجربة قابلة للمشاركة.</span>
+                <span class="hide-ar">Coverage that elevates the event and makes it highly shareable.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <div>
+              <h3>
+                <span class="hide-en">مواقع وصفحات تعريفية</span>
+                <span class="hide-ar">Websites & Landing Pages</span>
+              </h3>
+              <p>
+                <span class="hide-en">مواقع سريعة وواضحة ومقنعة تدعم صورة الشركة وتزيد فرص التواصل.</span>
+                <span class="hide-ar">Clear, premium websites that support trust and drive inquiries.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="badge">
+              <span class="hide-en">لماذا يختارنا العملاء؟</span>
+              <span class="hide-ar">Why Clients Choose Us</span>
+            </div>
+            <h2>
+              <span class="hide-en">لأننا لا نبيع خدمة منفصلة... بل نبني صورة ونتيجة</span>
+              <span class="hide-ar">Because we do not sell isolated tasks — we build image and outcomes</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-item">
+            <h3>
+              <span class="hide-en">فهم حقيقي للبيع</span>
+              <span class="hide-ar">Real Sales Understanding</span>
+            </h3>
+            <p>
+              <span class="hide-en">كل خطوة في المحتوى أو التصميم أو الإعلان يجب أن تخدم هدفًا تجاريًا واضحًا.</span>
+              <span class="hide-ar">Every design, content asset, and campaign should support a business objective.</span>
+            </p>
+          </div>
+
+          <div class="why-item">
+            <h3>
+              <span class="hide-en">تنفيذ بصري احترافي</span>
+              <span class="hide-ar">Strong Visual Execution</span>
+            </h3>
+            <p>
+              <span class="hide-en">نهتم بأن يظهر العميل بصورة أقوى، أكثر أناقة، وأكثر إقناعًا من المنافسين.</span>
+              <span class="hide-ar">We make brands look sharper, stronger, and more convincing than competitors.</span>
+            </p>
+          </div>
+
+          <div class="why-item">
+            <h3>
+              <span class="hide-en">تكامل بين الخدمات</span>
+              <span class="hide-ar">Integrated Services</span>
+            </h3>
+            <p>
+              <span class="hide-en">من الهوية إلى التصوير إلى الموقع والإعلانات، كل شيء يعمل معًا كمنظومة واحدة.</span>
+              <span class="hide-ar">From branding to media production to websites and ads, everything works together.</span>
+            </p>
+          </div>
+
+          <div class="why-item">
+            <h3>
+              <span class="hide-en">سرعة وسهولة في التواصل</span>
+              <span class="hide-ar">Fast, Clear Communication</span>
+            </h3>
+            <p>
+              <span class="hide-en">سهولة في بدء المشروع، وضوح في الرؤية، وربط مباشر بالواتساب لتسريع اتخاذ القرار.</span>
+              <span class="hide-ar">A smoother project start, clearer process, and direct WhatsApp access for faster decisions.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="partners">
+      <div class="container">
+        <div class="partners-box">
+          <div class="section-head" style="margin-bottom:0;">
+            <div>
+              <div class="badge">
+                <span class="hide-en">شركاء النجاح</span>
+                <span class="hide-ar">Success Partners</span>
+              </div>
+              <h2>
+                <span class="hide-en">العلامات التجارية التي نفخر بالعمل معها</span>
+                <span class="hide-ar">Brands we are proud to work with</span>
+              </h2>
+            </div>
+            <p>
+              <span class="hide-en">استبدل هذه العناصر لاحقًا بلوجوهات عملائك الحقيقية بلون موحد.</span>
+              <span class="hide-ar">Replace these placeholders later with your actual clients’ logos in one unified color.</span>
+            </p>
+          </div>
+
+          <div class="partners-grid">
+            <div class="partner">LOGO 01</div>
+            <div class="partner">LOGO 02</div>
+            <div class="partner">LOGO 03</div>
+            <div class="partner">LOGO 04</div>
+            <div class="partner">LOGO 05</div>
+            <div class="partner">LOGO 06</div>
+            <div class="partner">LOGO 07</div>
+            <div class="partner">LOGO 08</div>
+            <div class="partner">LOGO 09</div>
+            <div class="partner">LOGO 10</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="social">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="badge">
+              <span class="hide-en">منصات إيست تويست</span>
+              <span class="hide-ar">East Twist Platforms</span>
+            </div>
+            <h2>
+              <span class="hide-en">تابعنا على المنصات الأساسية</span>
+              <span class="hide-ar">Follow us on the main platforms</span>
+            </h2>
+          </div>
+          <p>
+            <span class="hide-en">يمكنك تعديل روابط كل منصة لاحقًا بوضع روابط حساباتك الفعلية.</span>
+            <span class="hide-ar">You can replace each link later with your actual social media account URLs.</span>
+          </p>
+        </div>
+
+        <div class="social-grid">
+          <a class="social-card" href="#" target="_blank">
+            <div class="icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="17.3" cy="6.8" r="0.9" fill="currentColor"/>
+              </svg>
+            </div>
+            <span>Instagram</span>
+          </a>
+
+          <a class="social-card" href="#" target="_blank">
+            <div class="icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path d="M14 8.5C13 7.7 10.5 8 9.5 9.5C8.7 10.7 8.8 12.1 9.4 13.1C10.1 14.3 11.9 15.1 13.5 14.1C15 13.2 15.4 10.7 14 8.5Z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M5 12C5 8 8.5 5 12.5 5C16.5 5 19 8 19 12C19 16 16 19 12 19C8 19 5 16 5 12Z" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <span>TikTok</span>
+          </a>
+
+          <a class="social-card" href="#" target="_blank">
+            <div class="icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M9 10V15M12 12V15M15 8V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span>LinkedIn</span>
+          </a>
+
+          <a class="social-card" href="#" target="_blank">
+            <div class="icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path d="M19 7.5C18.7 7.6 18.1 7.8 17.4 7.8C17.9 7.5 18.3 6.9 18.4 6.2C17.9 6.5 17.3 6.7 16.7 6.8C16.2 6.3 15.5 6 14.7 6C13.2 6 12 7.2 12 8.7C12 8.9 12 9.1 12.1 9.3C9.9 9.2 7.9 8.2 6.5 6.6C6.3 7 6.2 7.4 6.2 7.9C6.2 8.8 6.7 9.7 7.5 10.2C7.1 10.2 6.8 10.1 6.4 9.9V10C6.4 11.4 7.4 12.5 8.8 12.8C8.6 12.9 8.3 12.9 8 12.9C7.8 12.9 7.7 12.9 7.5 12.9C7.8 14 8.8 14.8 10 14.8C9.1 15.5 8 15.9 6.8 15.9C6.5 15.9 6.2 15.9 6 15.8C7.2 16.6 8.6 17 10.2 17C14.7 17 17.2 13.2 17.2 9.9V9.6C17.8 9.2 18.3 8.7 18.7 8.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span>X</span>
+          </a>
+
+          <a class="social-card" href="https://wa.me/966567031077" target="_blank">
+            <div class="icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5C8.2 5 5.2 7.9 5.2 11.5C5.2 12.8 5.6 14 6.4 15.1L5.6 18.5L9.1 17.6C10 18.1 11 18.3 12 18.3C15.8 18.3 18.8 15.4 18.8 11.8C18.8 8.1 15.8 5 12 5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M10 10.3C10.1 11.1 10.5 11.8 11 12.4C11.7 13.1 12.4 13.6 13.4 13.9C13.7 14 14 13.9 14.2 13.7L14.8 13.1C14.9 13 15.1 13 15.2 13.1L16.3 13.7C16.5 13.8 16.6 14 16.5 14.2C16.2 15.1 15.3 15.6 14.3 15.4C12.9 15.1 11.6 14.4 10.6 13.4C9.6 12.4 8.9 11.2 8.6 9.8C8.4 8.9 8.9 8 9.8 7.7C10 7.6 10.2 7.7 10.3 7.9L10.9 9C11 9.1 11 9.3 10.9 9.4L10.3 10C10.1 10.1 10 10.2 10 10.3Z" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-card">
+          <div>
+            <h2>
+              <span class="hide-en">جاهز تبني حضور أقوى لعلامتك التجارية؟</span>
+              <span class="hide-ar">Ready to build a stronger presence for your brand?</span>
+            </h2>
+            <p>
+              <span class="hide-en">
+                إذا كنت تبحث عن جهة تفهم التسويق، تهتم بالصورة، وتنفذ بجودة عالية،
+                فتواصل معنا الآن وابدأ مشروعك مع إيست تويست.
+              </span>
+              <span class="hide-ar">
+                If you need a team that understands marketing, values presentation, and executes with quality,
+                contact East Twist now and start your next project.
+              </span>
+            </p>
+          </div>
+
+          <a class="btn btn-primary" href="https://wa.me/966567031077" target="_blank">
+            <span class="hide-en">راسلنا على واتساب</span>
+            <span class="hide-ar">Contact via WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>East Twist</strong><br>
+        <span class="hide-en">الدعاية والإعلان والتسويق الإلكتروني</span>
+        <span class="hide-ar">Advertising & Digital Marketing</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="#services">
+          <span class="hide-en">الخدمات</span>
+          <span class="hide-ar">Services</span>
+        </a>
+        <a href="#portfolio">
+          <span class="hide-en">الأعمال</span>
+          <span class="hide-ar">Portfolio</span>
+        </a>
+        <a href="#partners">
+          <span class="hide-en">الشركاء</span>
+          <span class="hide-ar">Partners</span>
+        </a>
+        <a href="#social">
+          <span class="hide-en">المنصات</span>
+          <span class="hide-ar">Social</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const langToggle = document.getElementById("langToggle");
+    const body = document.body;
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const html = document.documentElement;
+
+    langToggle.addEventListener("click", () => {
+      body.classList.toggle("en");
+
+      if(body.classList.contains("en")){
+        html.setAttribute("lang", "en");
+        html.setAttribute("dir", "ltr");
+      } else {
+        html.setAttribute("lang", "ar");
+        html.setAttribute("dir", "rtl");
+      }
+    });
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
+  </script>
 
 </body>
 </html>
-Add website
