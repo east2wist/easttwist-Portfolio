@@ -1,1294 +1,201 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>East Twist | إيست تويست</title>
-  <meta name="description" content="إيست تويست للدعاية والإعلان والتسويق الرقمي - هوية بصرية، إدارة سوشيال ميديا، تصوير، ريلز، حملات ممولة، وتصميم مواقع." />
-  <meta name="theme-color" content="#2d2824" />
-  <style>
-    :root{
-      --bg:#f0eee7;
-      --bg-soft:#f6f3ed;
-      --primary:#2d2824;
-      --primary-2:#231f20;
-      --accent:#b79d65;
-      --text:#4b433e;
-      --muted:#7a6f67;
-      --line:rgba(183,157,101,.18);
-      --white:#ffffff;
-      --glass:rgba(255,255,255,.38);
-      --glass-dark:rgba(45,40,36,.72);
-      --shadow:0 18px 45px rgba(35,31,32,.12);
-      --radius-xl:34px;
-      --radius-lg:24px;
-      --radius-md:18px;
-      --container:min(1220px,92%);
-      --trans:.35s ease;
-      --font-main:"Madani","Madani Arabic","Madani UI","Segoe UI","Tahoma","Arial",sans-serif;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:var(--font-main);
-      background:
-        radial-gradient(circle at 10% 10%, rgba(183,157,101,.09), transparent 24%),
-        radial-gradient(circle at 90% 30%, rgba(183,157,101,.08), transparent 20%),
-        linear-gradient(180deg,#f7f4ef 0%, #f0eee7 100%);
-      color:var(--primary-2);
-      line-height:1.8;
-      overflow-x:hidden;
-    }
-
-    body.en{direction:ltr}
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    button,input,textarea,select{font:inherit}
-    .container{width:var(--container);margin:auto}
-
-    .ar-only{display:inline}
-    .en-only{display:none}
-    body.en .ar-only{display:none}
-    body.en .en-only{display:inline}
-
-    .floating-shape,
-    .floating-shape-2{
-      position:fixed;
-      pointer-events:none;
-      z-index:0;
-      filter:blur(30px);
-      opacity:.32;
-    }
-
-    .floating-shape{
-      width:260px;height:260px;
-      background:radial-gradient(circle, rgba(183,157,101,.4), transparent 62%);
-      top:90px;right:-40px;
-      animation:float1 10s ease-in-out infinite;
-    }
-
-    .floating-shape-2{
-      width:320px;height:320px;
-      background:radial-gradient(circle, rgba(45,40,36,.12), transparent 64%);
-      bottom:40px;left:-60px;
-      animation:float2 12s ease-in-out infinite;
-    }
-
-    @keyframes float1{
-      0%,100%{transform:translateY(0) translateX(0)}
-      50%{transform:translateY(18px) translateX(-10px)}
-    }
-
-    @keyframes float2{
-      0%,100%{transform:translateY(0) translateX(0)}
-      50%{transform:translateY(-22px) translateX(12px)}
-    }
-
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(240,238,231,.82);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--line);
-    }
-
-    .nav{
-      min-height:86px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:12px 0;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      flex-shrink:0;
-    }
-
-    .brand img{
-      width:64px;
-      height:64px;
-      object-fit:cover;
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(183,157,101,.24);
-      background:#fff;
-    }
-
-    .brand-text{
-      line-height:1.22;
-    }
-
-    .brand-text strong{
-      display:block;
-      color:var(--primary);
-      font-size:1.12rem;
-      font-weight:900;
-    }
-
-    .brand-text span{
-      color:var(--muted);
-      font-size:.9rem;
-      font-weight:700;
-    }
-
-    .nav-center{
-      flex:1;
-      display:flex;
-      justify-content:center;
-    }
-
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:22px;
-      flex-wrap:wrap;
-    }
-
-    .nav-links a{
-      color:var(--primary);
-      font-weight:800;
-      position:relative;
-      transition:var(--trans);
-    }
-
-    .nav-links a::after{
-      content:"";
-      position:absolute;
-      width:0;
-      height:2px;
-      background:var(--accent);
-      bottom:-6px;
-      right:0;
-      transition:var(--trans);
-    }
-
-    body.en .nav-links a::after{
-      right:auto;
-      left:0;
-    }
-
-    .nav-links a:hover{
-      color:var(--accent);
-    }
-
-    .nav-links a:hover::after{
-      width:100%;
-    }
-
-    .nav-actions{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      border:none;
-      border-radius:999px;
-      padding:14px 22px;
-      cursor:pointer;
-      transition:var(--trans);
-      font-weight:900;
-      white-space:nowrap;
-    }
-
-    .btn-primary{
-      background:var(--accent);
-      color:var(--primary);
-      box-shadow:0 10px 26px rgba(183,157,101,.3);
-    }
-
-    .btn-primary:hover{
-      background:var(--primary);
-      color:var(--bg);
-      transform:translateY(-3px);
-    }
-
-    .btn-outline{
-      background:transparent;
-      border:1.5px solid rgba(45,40,36,.14);
-      color:var(--primary);
-    }
-
-    .btn-outline:hover{
-      border-color:var(--accent);
-      color:var(--accent);
-      transform:translateY(-2px);
-    }
-
-    .mobile-btn{
-      display:none;
-      background:none;
-      border:none;
-      cursor:pointer;
-      color:var(--primary);
-    }
-
-    .hero{
-      position:relative;
-      z-index:1;
-      padding:80px 0 36px;
-      overflow:hidden;
-    }
-
-    .hero-shell{
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:24px;
-      align-items:stretch;
-    }
-
-    .hero-card{
-      position:relative;
-      overflow:hidden;
-      border-radius:var(--radius-xl);
-      background:
-        linear-gradient(135deg, rgba(45,40,36,.97), rgba(35,31,32,.96)),
-        #231f20;
-      color:var(--bg);
-      box-shadow:var(--shadow);
-      padding:46px;
-      min-height:600px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      width:360px;
-      height:360px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(183,157,101,.22), transparent 62%);
-      inset:auto auto -130px -90px;
-      animation:float1 10s ease-in-out infinite;
-    }
-
-    body.en .hero-card::before{
-      inset:auto -90px -130px auto;
-    }
-
-    .hero-badge{
-      display:inline-flex;
-      width:max-content;
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(183,157,101,.11);
-      border:1px solid rgba(183,157,101,.22);
-      color:var(--accent);
-      font-weight:800;
-      margin-bottom:18px;
-      position:relative;
-      z-index:1;
-    }
-
-    .hero h1{
-      position:relative;
-      z-index:1;
-      font-size:clamp(2.1rem,4.6vw,4.8rem);
-      line-height:1.14;
-      margin-bottom:16px;
-      font-weight:900;
-      max-width:850px;
-    }
-
-    .hero p{
-      position:relative;
-      z-index:1;
-      font-size:1.03rem;
-      color:rgba(240,238,231,.88);
-      max-width:760px;
-      margin-bottom:24px;
-    }
-
-    .hero-buttons{
-      position:relative;
-      z-index:1;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:28px;
-    }
-
-    .hero-stats{
-      position:relative;
-      z-index:1;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-    }
-
-    .stat{
-      padding:18px 14px;
-      border-radius:22px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(183,157,101,.16);
-      backdrop-filter:blur(8px);
-    }
-
-    .stat strong{
-      display:block;
-      color:var(--accent);
-      font-size:1.28rem;
-      margin-bottom:4px;
-    }
-
-    .hero-side{
-      display:grid;
-      gap:18px;
-      align-content:start;
-    }
-
-    .glass-card,
-    .service-card,
-    .social-strip,
-    .yt-item,
-    .location-card,
-    .contact-card{
-      background:rgba(255,255,255,.62);
-      backdrop-filter:blur(14px);
-      border:1px solid rgba(183,157,101,.16);
-      box-shadow:var(--shadow);
-      border-radius:28px;
-    }
-
-    .glass-card{padding:24px}
-
-    .glass-card h3{
-      color:var(--primary);
-      margin-bottom:8px;
-      font-size:1.14rem;
-    }
-
-    .glass-card p{color:var(--muted)}
-
-    .section{
-      position:relative;
-      z-index:1;
-      padding:44px 0 8px;
-    }
-
-    .section-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      gap:20px;
-      flex-wrap:wrap;
-      margin-bottom:24px;
-    }
-
-    .section-head h2{
-      font-size:clamp(1.7rem,3vw,2.6rem);
-      line-height:1.22;
-      color:var(--primary);
-    }
-
-    .section-head p{
-      max-width:720px;
-      color:var(--muted);
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(183,157,101,.1);
-      color:var(--accent);
-      border:1px solid rgba(183,157,101,.18);
-      font-weight:800;
-      margin-bottom:10px;
-    }
-
-    .services-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .service-card{
-      padding:24px;
-      transition:var(--trans);
-    }
-
-    .service-card:hover{
-      transform:translateY(-7px);
-      border-color:rgba(183,157,101,.34);
-      background:rgba(255,255,255,.8);
-    }
-
-    .icon-wrap{
-      width:58px;
-      height:58px;
-      border-radius:18px;
-      display:grid;
-      place-items:center;
-      background:rgba(183,157,101,.12);
-      color:var(--accent);
-      margin-bottom:16px;
-    }
-
-    .service-card h3{
-      color:var(--primary);
-      margin-bottom:8px;
-      font-size:1.12rem;
-    }
-
-    .service-card p{
-      color:var(--muted);
-      font-size:.96rem;
-    }
-
-    .carousel-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      margin-bottom:16px;
-      flex-wrap:wrap;
-    }
-
-    .carousel-controls{
-      display:flex;
-      gap:10px;
-    }
-
-    .carousel-btn{
-      width:50px;
-      height:50px;
-      border-radius:50%;
-      border:1px solid rgba(183,157,101,.18);
-      background:rgba(255,255,255,.66);
-      backdrop-filter:blur(10px);
-      box-shadow:var(--shadow);
-      display:grid;
-      place-items:center;
-      color:var(--primary);
-      cursor:pointer;
-      transition:var(--trans);
-    }
-
-    .carousel-btn:hover{
-      background:var(--accent);
-      color:var(--primary);
-      transform:translateY(-3px);
-    }
-
-    .yt-carousel-shell{
-      position:relative;
-      overflow:hidden;
-      padding:8px 0 18px;
-    }
-
-    .yt-track{
-      display:flex;
-      gap:18px;
-      overflow:auto;
-      scroll-behavior:smooth;
-      scrollbar-width:none;
-      padding:4px 2px 18px;
-    }
-
-    .yt-track::-webkit-scrollbar{display:none}
-
-    .yt-item{
-      min-width:min(380px,88vw);
-      overflow:hidden;
-      transition:transform var(--trans), opacity var(--trans);
-      background:linear-gradient(180deg, rgba(255,255,255,.58), rgba(255,255,255,.34));
-    }
-
-    .yt-item:hover{
-      transform:translateY(-8px) scale(1.01);
-    }
-
-    .yt-frame-wrap{
-      position:relative;
-      padding:18px 18px 0;
-    }
-
-    .yt-frame-wrap::before{
-      content:"";
-      position:absolute;
-      inset:14px 14px auto auto;
-      width:90px;
-      height:90px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(183,157,101,.18), transparent 70%);
-      pointer-events:none;
-      filter:blur(12px);
-    }
-
-    .yt-frame{
-      width:100%;
-      aspect-ratio:9/16;
-      border:0;
-      border-radius:22px;
-      background:#111;
-      display:block;
-      box-shadow:0 14px 34px rgba(35,31,32,.18);
-    }
-
-    .yt-body{
-      padding:18px 20px 22px;
-    }
-
-    .yt-body h3{
-      color:var(--primary);
-      margin-bottom:8px;
-      font-size:1.04rem;
-    }
-
-    .yt-body p{
-      color:var(--muted);
-      font-size:.95rem;
-    }
-
-    .social-strip{
-      padding:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:14px;
-      flex-wrap:wrap;
-      background:linear-gradient(135deg, rgba(255,255,255,.6), rgba(255,255,255,.35));
-    }
-
-    .social-link{
-      width:58px;
-      height:58px;
-      border-radius:18px;
-      display:grid;
-      place-items:center;
-      background:rgba(255,255,255,.72);
-      border:1px solid rgba(183,157,101,.16);
-      color:var(--primary);
-      transition:var(--trans);
-      box-shadow:0 10px 26px rgba(35,31,32,.08);
-    }
-
-    .social-link:hover{
-      transform:translateY(-5px);
-      color:var(--accent);
-      border-color:rgba(183,157,101,.34);
-      background:#fff;
-    }
-
-    .social-caption{
-      width:100%;
-      text-align:center;
-      color:var(--muted);
-      font-weight:700;
-      margin-top:2px;
-    }
-
-    .split-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-    }
-
-    .contact-card,
-    .location-card{
-      padding:26px;
-    }
-
-    .location-card iframe{
-      width:100%;
-      height:370px;
-      border:0;
-      border-radius:20px;
-      display:block;
-    }
-
-    .contact-list{
-      display:grid;
-      gap:12px;
-      margin-top:16px;
-    }
-
-    .contact-item{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      color:var(--text);
-    }
-
-    .contact-item strong{
-      display:block;
-      color:var(--primary);
-    }
-
-    .cta{
-      padding:44px 0 70px;
-    }
-
-    .cta-card{
-      position:relative;
-      overflow:hidden;
-      border-radius:34px;
-      padding:36px;
-      background:linear-gradient(135deg, rgba(45,40,36,.98), rgba(35,31,32,.98));
-      color:var(--bg);
-      box-shadow:var(--shadow);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:24px;
-      flex-wrap:wrap;
-    }
-
-    .cta-card::before{
-      content:"";
-      position:absolute;
-      width:260px;height:260px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(183,157,101,.24), transparent 65%);
-      left:-70px;top:-70px;
-    }
-
-    body.en .cta-card::before{
-      left:auto;right:-70px;
-    }
-
-    .cta-card h2{
-      position:relative;
-      z-index:1;
-      font-size:clamp(1.8rem,3vw,2.6rem);
-      margin-bottom:10px;
-    }
-
-    .cta-card p{
-      position:relative;
-      z-index:1;
-      color:rgba(240,238,231,.88);
-      max-width:720px;
-    }
-
-    .floating-whatsapp{
-      position:fixed;
-      left:22px;
-      bottom:22px;
-      z-index:999;
-      width:64px;
-      height:64px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:var(--accent);
-      color:var(--primary);
-      box-shadow:0 16px 34px rgba(35,31,32,.18);
-      transition:var(--trans);
-    }
-
-    body.en .floating-whatsapp{
-      left:auto;
-      right:22px;
-    }
-
-    .floating-whatsapp:hover{
-      transform:translateY(-4px) scale(1.04);
-      background:var(--primary);
-      color:var(--bg);
-    }
-
-    footer{
-      border-top:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(45,40,36,.03), rgba(45,40,36,.06));
-      padding:28px 0 34px;
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:20px;
-      align-items:center;
-    }
-
-    .footer-brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-
-    .footer-brand img{
-      width:58px;
-      height:58px;
-      object-fit:cover;
-      border-radius:18px;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(183,157,101,.2);
-      background:#fff;
-    }
-
-    .footer-links{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
-    .footer-links a{
-      color:var(--primary);
-      font-weight:800;
-    }
-
-    .footer-links a:hover{
-      color:var(--accent);
-    }
-
-    .copyright{
-      margin-top:12px;
-      color:var(--muted);
-      font-size:.92rem;
-    }
-
-    @media (max-width:1100px){
-      .services-grid{grid-template-columns:repeat(2,1fr)}
-    }
-
-    @media (max-width:930px){
-      .hero-shell,
-      .split-grid,
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-stats{grid-template-columns:1fr}
-      .mobile-btn{display:block}
-      .nav{align-items:flex-start}
-      .nav-center{
-        width:100%;
-        justify-content:flex-start;
-      }
-
-      .nav-links{
-        display:none;
-        width:100%;
-        flex-direction:column;
-        align-items:flex-start;
-        background:rgba(255,255,255,.85);
-        backdrop-filter:blur(12px);
-        border:1px solid rgba(183,157,101,.14);
-        border-radius:22px;
-        padding:16px;
-        box-shadow:var(--shadow);
-        margin-top:10px;
-      }
-
-      .nav-links.show{display:flex}
-      .footer-links{justify-content:flex-start}
-    }
-
-    @media (max-width:680px){
-      .hero{
-        padding-top:34px;
-      }
-
-      .hero-card,
-      .glass-card,
-      .service-card,
-      .contact-card,
-      .location-card{
-        padding:22px;
-      }
-
-      .services-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-buttons{
-        flex-direction:column;
-      }
-
-      .btn{width:100%}
-      .yt-item{min-width:88vw}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>East Twist</title>
+
+<style>
+:root{
+  --dark:#231f20;
+  --main:#2d2824;
+  --gold:#b79d65;
+  --light:#f0eee7;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family: "Segoe UI", Tahoma;
+  background: var(--light);
+  color: var(--main);
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.6);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  z-index:1000;
+}
+
+nav img{width:55px;border-radius:50%}
+
+nav a{
+  margin:0 10px;
+  text-decoration:none;
+  font-weight:bold;
+  color:var(--dark);
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(135deg,#2d2824,#000);
+  color:white;
+}
+
+.hero h1{
+  font-size:60px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:20px;
+  opacity:0.8;
+}
+
+.btn{
+  margin-top:25px;
+  padding:15px 30px;
+  background:var(--gold);
+  color:black;
+  border-radius:30px;
+  display:inline-block;
+  font-weight:bold;
+}
+
+/* SERVICES */
+section{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* YOUTUBE CAROUSEL */
+.carousel{
+  display:flex;
+  overflow-x:auto;
+  gap:20px;
+  padding:20px;
+}
+
+.video{
+  min-width:300px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* SOCIAL */
+.social{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+.social a{
+  font-size:25px;
+  color:var(--dark);
+}
+
+/* FOOTER */
+footer{
+  background:var(--dark);
+  color:white;
+  padding:40px;
+  text-align:center;
+}
+
+</style>
 </head>
+
 <body>
-  <div class="floating-shape"></div>
-  <div class="floating-shape-2"></div>
 
-  <header class="topbar">
-    <div class="container nav">
-      <a href="#home" class="brand">
-        <img src="/FC5FAE0D-3D7C-499C-8840-D29DA0977576.jpeg" alt="East Twist Logo">
-        <div class="brand-text">
-          <strong>East Twist</strong>
-          <span class="ar-only">إيست تويست للدعاية والإعلان والتسويق الرقمي</span>
-          <span class="en-only">Advertising & Digital Marketing</span>
-        </div>
-      </a>
+<nav>
+<img src="logo.png">
+<div>
+<a href="#services">الخدمات</a>
+<a href="#works">الأعمال</a>
+<a href="#contact">تواصل</a>
+</div>
+</nav>
 
-      <div class="nav-center">
-        <button class="mobile-btn" id="menuBtn" aria-label="menu">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-        </button>
+<section class="hero">
+<div>
+<h1>East Twist</h1>
+<p>نصنع حضورك… ونحوّله إلى عملاء</p>
+<a href="https://wa.me/966567031077" class="btn">ابدأ الآن</a>
+</div>
+</section>
 
-        <nav class="nav-links" id="navLinks">
-          <a href="#services"><span class="ar-only">الخدمات</span><span class="en-only">Services</span></a>
-          <a href="#works"><span class="ar-only">من أعمالنا</span><span class="en-only">Our Work</span></a>
-          <a href="#social"><span class="ar-only">منصاتنا</span><span class="en-only">Platforms</span></a>
-          <a href="#location"><span class="ar-only">موقعنا</span><span class="en-only">Location</span></a>
-        </nav>
-      </div>
+<section id="services">
+<h2>خدماتنا</h2>
+<div class="services">
+<div class="card">إدارة السوشيال ميديا</div>
+<div class="card">تصوير احترافي</div>
+<div class="card">تصميم جرافيك</div>
+<div class="card">إعلانات ممولة</div>
+</div>
+</section>
 
-      <div class="nav-actions">
-        <button class="btn btn-outline" id="langToggle">العربية | EN</button>
-        <a class="btn btn-primary" href="https://wa.me/966567031077" target="_blank">
-          <span class="ar-only">ابدأ معنا</span>
-          <span class="en-only">Start with us</span>
-        </a>
-      </div>
-    </div>
-  </header>
+<section id="works">
+<h2>من أعمالنا</h2>
+<div class="carousel">
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-shell">
-        <div class="hero-card">
-          <div class="hero-badge">
-            <span class="ar-only">حيث يتحول التواجد إلى صدارة</span>
-            <span class="en-only">Where presence turns into leadership</span>
-          </div>
+<div class="video">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/nPE3k0dRKOA"></iframe>
+</div>
 
-          <h1>
-            <span class="ar-only">نبني حضورًا بصريًا وتسويقيًا يلفت النظر، يرفع الثقة، ويقود العميل للتواصل.</span>
-            <span class="en-only">We build a visual and marketing presence that attracts attention, elevates trust, and drives action.</span>
-          </h1>
+<div class="video">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/qGLANtC3Kgk"></iframe>
+</div>
 
-          <p>
-            <span class="ar-only">إيست تويست للدعاية والإعلان والتسويق الرقمي. نُحوّل الأفكار إلى هوية أقوى، محتوى أجمل، ورسائل أوضح تساعد نشاطك على الظهور بالشكل الذي يستحقه.</span>
-            <span class="en-only">East Twist transforms ideas into stronger branding, better content, and clearer communication that helps your business stand out.</span>
-          </p>
+<div class="video">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/ureEF_EOZeM"></iframe>
+</div>
 
-          <div class="hero-buttons">
-            <a class="btn btn-primary" href="https://wa.me/966567031077" target="_blank">
-              <span class="ar-only">تواصل واتساب</span>
-              <span class="en-only">WhatsApp</span>
-            </a>
-            <a class="btn btn-outline" href="#works">
-              <span class="ar-only">شاهد الأعمال</span>
-              <span class="en-only">See Work</span>
-            </a>
-          </div>
+</div>
+</section>
 
-          <div class="hero-stats">
-            <div class="stat">
-              <strong>Creative</strong>
-              <span class="ar-only">إبداع بصري يرسخ الصورة</span>
-              <span class="en-only">Visual creativity that builds image</span>
-            </div>
-            <div class="stat">
-              <strong>Strategy</strong>
-              <span class="ar-only">فهم تسويقي يدعم القرار</span>
-              <span class="en-only">Strategic marketing support</span>
-            </div>
-            <div class="stat">
-              <strong>Execution</strong>
-              <span class="ar-only">تنفيذ أنيق سريع وواضح</span>
-              <span class="en-only">Elegant fast execution</span>
-            </div>
-          </div>
-        </div>
+<section id="contact">
+<h2>تواصل معنا</h2>
+<p>+966 56 703 1077</p>
 
-        <div class="hero-side">
-          <div class="glass-card">
-            <div class="badge"><span class="ar-only">الهوية</span><span class="en-only">Identity</span></div>
-            <h3><span class="ar-only">هوية نظيفة وفاخرة</span><span class="en-only">Clean premium identity</span></h3>
-            <p><span class="ar-only">تم تبسيط الواجهة بصريًا وجعلها أكثر أناقة، مع اعتماد الشفافية والزجاجية والظلال الهادئة.</span><span class="en-only">The interface is rebuilt with cleaner aesthetics, glass effects, and balanced premium shadows.</span></p>
-          </div>
+<div class="social">
+<a href="https://instagram.com/easttwistksa">IG</a>
+<a href="https://tiktok.com/@easttwistksa">TT</a>
+<a href="https://youtube.com/@east2wist">YT</a>
+</div>
+</section>
 
-          <div class="glass-card">
-            <div class="badge"><span class="ar-only">النتيجة</span><span class="en-only">Result</span></div>
-            <h3><span class="ar-only">موقع أسهل وأكثر إقناعًا</span><span class="en-only">A cleaner more convincing site</span></h3>
-            <p><span class="ar-only">تم تقليل العناصر المشتتة، وتحويل الأعمال إلى كاروسيل يوتيوب فقط، وترتيب المنصات بشكل عرضي واضح.</span><span class="en-only">Distracting elements were reduced, the portfolio was turned into a YouTube-only carousel, and social icons were arranged horizontally.</span></p>
-          </div>
+<footer>
+<p>© East Twist 2026</p>
+</footer>
 
-          <div class="glass-card">
-            <div class="badge"><span class="ar-only">التجربة</span><span class="en-only">Experience</span></div>
-            <h3><span class="ar-only">حركة ناعمة وتفاعل ممتع</span><span class="en-only">Smooth motion and enjoyable interaction</span></h3>
-            <p><span class="ar-only">الحركات الآن أخف وأفخم بصريًا، لتدعم الإحساس بالجودة بدلًا من إزعاج الزائر.</span><span class="en-only">Motion is now more elegant and subtle, enhancing quality instead of distracting the user.</span></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="badge"><span class="ar-only">خدمات إيست تويست</span><span class="en-only">East Twist Services</span></div>
-            <h2>
-              <span class="ar-only">خدمات تسويقية وإبداعية تصنع فرقًا حقيقيًا</span>
-              <span class="en-only">Creative and marketing services that make a real difference</span>
-            </h2>
-          </div>
-          <p>
-            <span class="ar-only">من إدارة السوشيال ميديا إلى التصوير والريلز والتصميم والمواقع، كل خدمة لدينا مصممة لدعم حضورك ونتيجتك.</span>
-            <span class="en-only">From social media management to reels, photography, design, and websites, every service is built to support presence and results.</span>
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 19V10M12 19V5M20 19V13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-            <h3><span class="ar-only">إدارة السوشيال ميديا</span><span class="en-only">Social Media Management</span></h3>
-            <p><span class="ar-only">تخطيط، تنظيم، نشر، وصناعة حضور رقمي أقوى للعلامة.</span><span class="en-only">Planning, publishing, and building a stronger digital presence.</span></p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="7" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="13" r="3" stroke="currentColor" stroke-width="1.8"/></svg></div>
-            <h3><span class="ar-only">التصوير الفوتوغرافي</span><span class="en-only">Photography</span></h3>
-            <p><span class="ar-only">تصوير منتجات وخدمات ومواقع تجارية بإخراج بصري يرفع القيمة.</span><span class="en-only">Premium photography for products, services, and commercial spaces.</span></p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M10 10L15 13L10 16V10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
-            <h3><span class="ar-only">الريلز والفيديو</span><span class="en-only">Reels & Video</span></h3>
-            <p><span class="ar-only">محتوى مرئي قصير يلفت ويقنع ويناسب المنصات الحديثة.</span><span class="en-only">Short-form visual content tailored for modern platforms.</span></p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M8 5H19V16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <h3><span class="ar-only">التصميم الجرافيكي</span><span class="en-only">Graphic Design</span></h3>
-            <p><span class="ar-only">تصاميم جذابة ومتناسقة مع الهوية وملائمة للإعلانات والمحتوى.</span><span class="en-only">Premium graphics aligned with your brand and content goals.</span></p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12H20M12 4V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-            <h3><span class="ar-only">الإعلانات الممولة</span><span class="en-only">Paid Ads</span></h3>
-            <p><span class="ar-only">حملات على Meta وTikTok وGoogle للوصول للجمهور الأنسب.</span><span class="en-only">Campaigns across Meta, TikTok, and Google to reach the right audience.</span></p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 9H16M8 13H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-            <h3><span class="ar-only">تصميم المواقع</span><span class="en-only">Website Design</span></h3>
-            <p><span class="ar-only">مواقع نظيفة وسريعة وتفاعلية تعكس جودة العلامة التجارية.</span><span class="en-only">Clean, responsive, and interactive websites that reflect quality.</span></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="works">
-      <div class="container">
-        <div class="carousel-head">
-          <div>
-            <div class="badge"><span class="ar-only">من أعمالنا على يوتيوب</span><span class="en-only">Our YouTube Work</span></div>
-            <h2 style="font-size:clamp(1.7rem,3vw,2.6rem);line-height:1.22;color:var(--primary);">
-              <span class="ar-only">كاروسيل زجاجي عائم لأعمال إيست تويست</span>
-              <span class="en-only">Floating glass carousel for East Twist work</span>
-            </h2>
-          </div>
-
-          <div class="carousel-controls">
-            <button class="carousel-btn" id="prevWork" aria-label="previous">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <button class="carousel-btn" id="nextWork" aria-label="next">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="yt-carousel-shell">
-          <div class="yt-track" id="ytTrack">
-            <article class="yt-item">
-              <div class="yt-frame-wrap">
-                <iframe class="yt-frame" src="https://www.youtube.com/embed/nPE3k0dRKOA" title="East Twist YouTube 1" allowfullscreen></iframe>
-              </div>
-              <div class="yt-body">
-                <h3><span class="ar-only">عمل مرئي 01</span><span class="en-only">Visual Work 01</span></h3>
-                <p><span class="ar-only">محتوى بصري يعكس أسلوب إيست تويست في الإخراج والرسالة.</span><span class="en-only">A visual sample reflecting East Twist style and direction.</span></p>
-              </div>
-            </article>
-
-            <article class="yt-item">
-              <div class="yt-frame-wrap">
-                <iframe class="yt-frame" src="https://www.youtube.com/embed/qGLANtC3Kgk" title="East Twist YouTube 2" allowfullscreen></iframe>
-              </div>
-              <div class="yt-body">
-                <h3><span class="ar-only">عمل مرئي 02</span><span class="en-only">Visual Work 02</span></h3>
-                <p><span class="ar-only">مثال على الدمج بين الفكرة والإقناع البصري.</span><span class="en-only">A sample of strong concept and visual persuasion.</span></p>
-              </div>
-            </article>
-
-            <article class="yt-item">
-              <div class="yt-frame-wrap">
-                <iframe class="yt-frame" src="https://www.youtube.com/embed/ureEF_EOZeM" title="East Twist YouTube 3" allowfullscreen></iframe>
-              </div>
-              <div class="yt-body">
-                <h3><span class="ar-only">عمل مرئي 03</span><span class="en-only">Visual Work 03</span></h3>
-                <p><span class="ar-only">محتوى قصير مناسب للانتباه السريع والتفاعل.</span><span class="en-only">Short-form content designed for quick attention and engagement.</span></p>
-              </div>
-            </article>
-
-            <article class="yt-item">
-              <div class="yt-frame-wrap">
-                <iframe class="yt-frame" src="https://www.youtube.com/embed/ciKJceZC6Ew" title="East Twist YouTube 4" allowfullscreen></iframe>
-              </div>
-              <div class="yt-body">
-                <h3><span class="ar-only">عمل مرئي 04</span><span class="en-only">Visual Work 04</span></h3>
-                <p><span class="ar-only">فيديو يعكس الجرأة والوضوح في تقديم الرسالة.</span><span class="en-only">A piece that reflects boldness and clarity in messaging.</span></p>
-              </div>
-            </article>
-
-            <article class="yt-item">
-              <div class="yt-frame-wrap">
-                <iframe class="yt-frame" src="https://www.youtube.com/embed/xKdxtOZ9uHo" title="East Twist YouTube 5" allowfullscreen></iframe>
-              </div>
-              <div class="yt-body">
-                <h3><span class="ar-only">عمل مرئي 05</span><span class="en-only">Visual Work 05</span></h3>
-                <p><span class="ar-only">أسلوب بصري متماسك يبرز الخدمة بشكل أنيق.</span><span class="en-only">A consistent visual language that presents the service elegantly.</span></p>
-              </div>
-            </article>
-
-            <article class="yt-item">
-              <div class="yt-frame-wrap">
-                <iframe class="yt-frame" src="https://www.youtube.com/embed/fOgeLQ45xZQ" title="East Twist YouTube 6" allowfullscreen></iframe>
-              </div>
-              <div class="yt-body">
-                <h3><span class="ar-only">عمل مرئي 06</span><span class="en-only">Visual Work 06</span></h3>
-                <p><span class="ar-only">محتوى يرسخ الإحساس بالفخامة والهوية.</span><span class="en-only">Content that reinforces premium feeling and identity.</span></p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="social">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="badge"><span class="ar-only">منصات إيست تويست</span><span class="en-only">East Twist Platforms</span></div>
-            <h2>
-              <span class="ar-only">كل منصاتنا في صف واحد واضح</span>
-              <span class="en-only">All our platforms in one clear row</span>
-            </h2>
-          </div>
-          <p>
-            <span class="ar-only">كل أيقونة تؤدي مباشرة إلى صفحة إيست تويست الخاصة بها.</span>
-            <span class="en-only">Each icon links directly to its East Twist page.</span>
-          </p>
-        </div>
-
-        <div class="social-strip">
-          <a class="social-link" href="https://www.instagram.com/easttwistksa" target="_blank" aria-label="Instagram">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.8" r=".9" fill="currentColor"/></svg>
-          </a>
-
-          <a class="social-link" href="https://www.tiktok.com/@easttwistksa" target="_blank" aria-label="TikTok">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M14 8.5C13 7.7 10.5 8 9.5 9.5C8.7 10.7 8.8 12.1 9.4 13.1C10.1 14.3 11.9 15.1 13.5 14.1C15 13.2 15.4 10.7 14 8.5Z" stroke="currentColor" stroke-width="1.8"/><path d="M5 12C5 8 8.5 5 12.5 5C16.5 5 19 8 19 12C19 16 16 19 12 19C8 19 5 16 5 12Z" stroke="currentColor" stroke-width="1.8"/></svg>
-          </a>
-
-          <a class="social-link" href="https://youtube.com/@east2wist?si=oI8N--Stm_8q-63G" target="_blank" aria-label="YouTube">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="6.5" width="17" height="11" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M10 10L15 12L10 14V10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-          </a>
-
-          <a class="social-link" href="https://www.threads.com/@easttwistksa?igshid=NTc4MTIwNjQ2YQ==" target="_blank" aria-label="Threads">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12.4 8.1C14.6 8.1 16 9.2 16.1 11.1C16.2 13.4 14.5 15.2 12 15.2C9.6 15.2 8 13.8 8 11.6C8 9.3 9.6 8.1 12.4 8.1Z" stroke="currentColor" stroke-width="1.8"/><path d="M12 4.5C16.1 4.5 19 7.2 19 11.8C19 16.1 16.1 19.5 12 19.5C7.9 19.5 5 16.4 5 11.7C5 7.2 7.9 4.5 12 4.5Z" stroke="currentColor" stroke-width="1.8"/></svg>
-          </a>
-
-          <a class="social-link" href="https://wa.me/966567031077" target="_blank" aria-label="WhatsApp">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 5C8.2 5 5.2 7.9 5.2 11.5C5.2 12.8 5.6 14 6.4 15.1L5.6 18.5L9.1 17.6C10 18.1 11 18.3 12 18.3C15.8 18.3 18.8 15.4 18.8 11.8C18.8 8.1 15.8 5 12 5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 10.3C10.1 11.1 10.5 11.8 11 12.4C11.7 13.1 12.4 13.6 13.4 13.9C13.7 14 14 13.9 14.2 13.7L14.8 13.1C14.9 13 15.1 13 15.2 13.1L16.3 13.7C16.5 13.8 16.6 14 16.5 14.2C16.2 15.1 15.3 15.6 14.3 15.4C12.9 15.1 11.6 14.4 10.6 13.4C9.6 12.4 8.9 11.2 8.6 9.8C8.4 8.9 8.9 8 9.8 7.7C10 7.6 10.2 7.7 10.3 7.9L10.9 9C11 9.1 11 9.3 10.9 9.4L10.3 10C10.1 10.1 10 10.2 10 10.3Z" stroke="currentColor" stroke-width="1.5"/></svg>
-          </a>
-
-          <div class="social-caption">
-            <span class="ar-only">@easttwistksa</span>
-            <span class="en-only">@easttwistksa</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="location">
-      <div class="container split-grid">
-        <div class="location-card">
-          <div class="badge"><span class="ar-only">موقع الشركة</span><span class="en-only">Company Location</span></div>
-          <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.22;color:var(--primary);margin-bottom:10px;">
-            <span class="ar-only">زورنا أو افتح اللوكيشن مباشرة</span>
-            <span class="en-only">Visit us or open the location directly</span>
-          </h2>
-          <p style="color:var(--muted);margin-bottom:16px;">
-            <span class="ar-only">يمكنك فتح موقع إيست تويست مباشرة عبر خرائط جوجل.</span>
-            <span class="en-only">Open East Twist location directly through Google Maps.</span>
-          </p>
-
-          <iframe
-            src="https://www.google.com/maps?q=26.4344,50.1033&z=15&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen
-            title="East Twist Location">
-          </iframe>
-        </div>
-
-        <div class="contact-card">
-          <div class="badge"><span class="ar-only">تواصل مباشر</span><span class="en-only">Direct Contact</span></div>
-          <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.22;color:var(--primary);margin-bottom:10px;">
-            <span class="ar-only">لنبدأ مشروعك بالطريقة الصحيحة</span>
-            <span class="en-only">Let’s start your project the right way</span>
-          </h2>
-          <p style="color:var(--muted);margin-bottom:16px;">
-            <span class="ar-only">تواصل معنا الآن عبر واتساب أو افتح موقعنا على خرائط جوجل للوصول السريع.</span>
-            <span class="en-only">Reach us now on WhatsApp or open our Google Maps location for quick access.</span>
-          </p>
-
-          <div class="contact-list">
-            <div class="contact-item">
-              <div class="icon-wrap" style="width:48px;height:48px;margin:0;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 5C8.2 5 5.2 7.9 5.2 11.5C5.2 12.8 5.6 14 6.4 15.1L5.6 18.5L9.1 17.6C10 18.1 11 18.3 12 18.3C15.8 18.3 18.8 15.4 18.8 11.8C18.8 8.1 15.8 5 12 5Z" stroke="currentColor" stroke-width="1.8"/></svg>
-              </div>
-              <div>
-                <strong><span class="ar-only">واتساب</span><span class="en-only">WhatsApp</span></strong>
-                <span dir="ltr">+966 56 703 1077</span>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="icon-wrap" style="width:48px;height:48px;margin:0;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 20C12 20 5 16 5 10A4 4 0 0 1 12 7A4 4 0 0 1 19 10C19 16 12 20 12 20Z" stroke="currentColor" stroke-width="1.8"/></svg>
-              </div>
-              <div>
-                <strong><span class="ar-only">اللوكيشن</span><span class="en-only">Location</span></strong>
-                <span><span class="ar-only">افتح الموقع مباشرة على جوجل ماب</span><span class="en-only">Open directly on Google Maps</span></span>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
-            <a class="btn btn-primary" href="https://share.google/qkj9zrPngtu9U8w7v" target="_blank">
-              <span class="ar-only">فتح جوجل ماب</span>
-              <span class="en-only">Open Google Maps</span>
-            </a>
-            <a class="btn btn-outline" href="https://wa.me/966567031077" target="_blank">
-              <span class="ar-only">راسلنا الآن</span>
-              <span class="en-only">Message us now</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <div class="cta-card">
-          <div>
-            <h2>
-              <span class="ar-only">جاهز لصورة أقوى وحضور يليق بعلامتك؟</span>
-              <span class="en-only">Ready for a stronger image and presence?</span>
-            </h2>
-            <p>
-              <span class="ar-only">إذا كنت تريد محتوى أجمل، عرضًا أقوى، ورسالة أوضح لعملائك، فتواصل مع إيست تويست الآن.</span>
-              <span class="en-only">If you want better content, stronger presentation, and clearer communication for your customers, contact East Twist now.</span>
-            </p>
-          </div>
-
-          <a class="btn btn-primary" href="https://wa.me/966567031077" target="_blank">
-            <span class="ar-only">ابدأ عبر واتساب</span>
-            <span class="en-only">Start on WhatsApp</span>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <a class="floating-whatsapp" href="https://wa.me/966567031077" target="_blank" aria-label="WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-      <path d="M12 5C8.2 5 5.2 7.9 5.2 11.5C5.2 12.8 5.6 14 6.4 15.1L5.6 18.5L9.1 17.6C10 18.1 11 18.3 12 18.3C15.8 18.3 18.8 15.4 18.8 11.8C18.8 8.1 15.8 5 12 5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-      <path d="M10 10.3C10.1 11.1 10.5 11.8 11 12.4C11.7 13.1 12.4 13.6 13.4 13.9C13.7 14 14 13.9 14.2 13.7L14.8 13.1C14.9 13 15.1 13 15.2 13.1L16.3 13.7C16.5 13.8 16.6 14 16.5 14.2C16.2 15.1 15.3 15.6 14.3 15.4C12.9 15.1 11.6 14.4 10.6 13.4C9.6 12.4 8.9 11.2 8.6 9.8C8.4 8.9 8.9 8 9.8 7.7C10 7.6 10.2 7.7 10.3 7.9L10.9 9C11 9.1 11 9.3 10.9 9.4L10.3 10C10.1 10.1 10 10.2 10 10.3Z" stroke="currentColor" stroke-width="1.5"/>
-    </svg>
-  </a>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">
-            <img src="/FC5FAE0D-3D7C-499C-8840-D29DA0977576.jpeg" alt="East Twist Logo">
-            <div>
-              <strong style="display:block;color:var(--primary);font-size:1.08rem;">East Twist</strong>
-              <span style="color:var(--muted);">
-                <span class="ar-only">إيست تويست للدعاية والإعلان والتسويق الرقمي</span>
-                <span class="en-only">Advertising & Digital Marketing</span>
-              </span>
-            </div>
-          </div>
-
-          <div class="copyright">
-            <span class="ar-only">© 2026 جميع الحقوق محفوظة لإيست تويست</span>
-            <span class="en-only">© 2026 All rights reserved to East Twist</span>
-          </div>
-        </div>
-
-        <div class="footer-links">
-          <a href="#services"><span class="ar-only">الخدمات</span><span class="en-only">Services</span></a>
-          <a href="#works"><span class="ar-only">الأعمال</span><span class="en-only">Work</span></a>
-          <a href="#social"><span class="ar-only">المنصات</span><span class="en-only">Platforms</span></a>
-          <a href="#location"><span class="ar-only">الموقع</span><span class="en-only">Location</span></a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const body = document.body;
-    const html = document.documentElement;
-    const langToggle = document.getElementById("langToggle");
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
-    const ytTrack = document.getElementById("ytTrack");
-    const prevWork = document.getElementById("prevWork");
-    const nextWork = document.getElementById("nextWork");
-
-    langToggle.addEventListener("click", () => {
-      body.classList.toggle("en");
-      if(body.classList.contains("en")){
-        html.setAttribute("lang","en");
-        html.setAttribute("dir","ltr");
-      } else {
-        html.setAttribute("lang","ar");
-        html.setAttribute("dir","rtl");
-      }
-    });
-
-    menuBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-    });
-
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => navLinks.classList.remove("show"));
-    });
-
-    const getScrollAmount = () => Math.min(420, ytTrack.clientWidth * 0.92);
-
-    prevWork.addEventListener("click", () => {
-      ytTrack.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
-    });
-
-    nextWork.addEventListener("click", () => {
-      ytTrack.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
-    });
-  </script>
 </body>
 </html>
