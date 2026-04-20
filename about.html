@@ -4,145 +4,192 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>East Twist | من نحن</title>
-  <meta name="description" content="تعرف على إيست تويست وخبرتها في التسويق والدعاية والإعلان" />
-  <meta name="theme-color" content="#2d2824" />
+  <meta name="description" content="تعرف على إيست تويست وخبرتها في التسويق الإلكتروني والدعاية والإعلان والمطبوعات والتنفيذ الميداني." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="page-wrap">
-<a class="skip-link" href="#content">تخطي إلى المحتوى</a>
-<header class="site-header">
-  <div class="container navbar">
-    <a href="index.html" class="brand">
-      <img src="logo-et.png" alt="East Twist Logo" />
-      <div class="brand-mark">
-        <strong>East Twist</strong>
-        <span>إيست تويست للدعاية والإعلان والتسويق الرقمي</span>
+  <div class="blur-orb"></div>
+  <div class="blur-orb-2"></div>
+  <div class="blur-orb-3"></div>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="IMG_4515.png" alt="East Twist Logo">
+        <div class="brand-text">
+          <strong>East Twist</strong>
+          <span>إيست تويست للدعاية والإعلان والتسويق الرقمي</span>
+        </div>
+      </a>
+
+      <div class="desktop-nav">
+        <nav class="nav-links">
+          <a href="index.html">الرئيسية</a>
+          <a class="active" href="about.html">من نحن</a>
+          <a href="services.html">خدماتنا</a>
+          <a href="works.html">أعمالنا</a>
+          <a href="offers.html">العروض والباقات</a>
+          <a href="contact.html">تواصل معنا</a>
+        </nav>
       </div>
-    </a>
-    <div class="nav-center">
-      <button class="mobile-toggle" id="menuBtn" aria-label="menu">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-          <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary desktop-cta" href="contact.html">ابدأ معنا</a>
+        <button class="mobile-btn" id="menuBtn" aria-label="فتح القائمة">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+            <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-head">
+      <div class="drawer-brand">
+        <img src="IMG_4515.png" alt="East Twist Logo">
+        <div>
+          <strong>East Twist</strong>
+          <span>إيست تويست للدعاية والإعلان والتسويق الرقمي</span>
+        </div>
+      </div>
+      <button class="drawer-close" id="closeMenuBtn" aria-label="إغلاق القائمة">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
         </svg>
       </button>
-      <nav class="nav-menu" id="navMenu"><a href="index.html" class="">الرئيسية</a><a href="about.html" class="active">من نحن</a><a href="services.html" class="">خدماتنا</a><a href="works.html" class="">أعمالنا</a><a href="offers.html" class="">العروض والباقات</a><a href="contact.html" class="">تواصل معنا</a></nav>
     </div>
-    <div class="nav-actions">
-      <button class="btn btn-outline" id="langToggle">العربية | EN</button>
-      <a class="btn btn-primary" href="https://wa.me/966567031077" target="_blank">واتساب مباشر</a>
-    </div>
-  </div>
-</header>
 
-<main id="content">
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-hero-panel">
-        <div class="badge">من نحن</div>
-        <h1>إيست تويست: شريك نمو يجمع بين التسويق الرقمي والتنفيذ الإعلاني على أرض الواقع</h1>
-        <p>نحن لا ننظر إلى التسويق كمنشورات فقط، بل كمنظومة كاملة تبدأ من فهم النشاط والسوق، ثم صياغة الرسائل، وصناعة المحتوى، وإطلاق الحملات، وتنفيذ المواد الدعائية التي تدعم الحضور الحقيقي للعلامة.</p>
-      </div>
-    </div>
-  </section>
+    <nav class="drawer-links">
+      <a href="index.html">الرئيسية</a>
+      <a class="active" href="about.html">من نحن</a>
+      <a href="services.html">خدماتنا</a>
+      <a href="works.html">أعمالنا</a>
+      <a href="offers.html">العروض والباقات</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+  </aside>
 
-  <section class="section">
-    <div class="container about-grid">
-      <div class="about-card">
-        <h3>ماذا نفعل؟</h3>
-        <p>نساعد الشركات والمشروعات على بناء حضور بصري وتسويقي يليق بقيمتها. نمزج بين الإبداع والاستراتيجية والتنفيذ، سواء على السوشيال ميديا أو في المطبوعات، المعارض، ونقاط البيع.</p>
-        <ul>
-          <li>بناء خطط تسويق واضحة وقابلة للتنفيذ</li>
-          <li>رفع جودة الظهور البصري والمحتوى</li>
-          <li>توحيد الرسائل بين الإعلان وخدمة العملاء والمبيعات</li>
-          <li>تحويل الهوية إلى أصول قابلة للتطبيق على كل القنوات</li>
-        </ul>
-      </div>
-
-      <div class="about-card">
-        <h3>كيف نفكر؟</h3>
-        <p>العميل لا يرى “تصميمًا” فقط، بل يكوّن انطباعًا كاملًا عن مستوى النشاط. لذلك نركّز على الاتساق، الجودة، ووضوح العرض التجاري.</p>
-        <div class="kpi-grid">
-          <div class="kpi"><strong>Digital</strong><span>محتوى، حملات، مواقع</span></div>
-          <div class="kpi"><strong>Creative</strong><span>تصوير، ريلز، تصميم</span></div>
-          <div class="kpi"><strong>Execution</strong><span>مطبوعات ولوحات وبوثات</span></div>
+  <main>
+    <section class="page-hero reveal active">
+      <div class="container">
+        <div class="page-hero-box">
+          <div class="badge">من نحن</div>
+          <h1>إيست تويست… شريك متكامل في التسويق الإلكتروني والدعاية والإعلان</h1>
+          <p>
+            نعمل على بناء حضور أقوى للعلامات التجارية من خلال الجمع بين التفكير التسويقي، الإنتاج الإبداعي، والتنفيذ العملي على المنصات الرقمية وفي نقاط العرض والمعارض والفعاليات.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container two-col">
-      <div class="about-card">
-        <h3>خبرتنا في التسويق الإلكتروني</h3>
-        <ul>
-          <li>تحليل السوق والمنافسين</li>
-          <li>إدارة وتطوير حسابات التواصل</li>
-          <li>الإعلانات الممولة وقياس النتائج</li>
-          <li>التصوير والمحتوى القصير للمنصات</li>
-          <li>تصميم الهوية والبروفايل والعروض</li>
-          <li>تصميم المواقع وصفحات الهبوط</li>
-        </ul>
+    <section class="section reveal">
+      <div class="container hero-panel">
+        <div class="glass-card">
+          <span class="section-kicker">رؤيتنا</span>
+          <h3>تحويل التواجد إلى صدارة</h3>
+          <p>
+            نؤمن أن العلامة التجارية لا تحتاج فقط إلى تصميم جميل أو إعلان ممول، بل إلى منظومة متكاملة من الصورة، الرسالة، الظهور، والتنفيذ. لذلك نعمل على بناء تجربة متماسكة ترفع قيمة البراند في ذهن العميل.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <span class="section-kicker">مهمتنا</span>
+          <h3>خلق تأثير بصري وتسويقي يدفع للنمو</h3>
+          <p>
+            مهمتنا أن نساعد المشاريع والشركات على الظهور بصورة احترافية أكثر، وزيادة فرص التفاعل والبيع، عبر حلول قابلة للتنفيذ فعليًا داخل المنصات أو داخل نقاط التواجد الميداني.
+          </p>
+        </div>
       </div>
-      <div class="about-card">
-        <h3>خبرتنا في الدعاية والإعلان</h3>
-        <ul>
-          <li>المطبوعات التجارية بجميع أنواعها</li>
-          <li>الهدايا الدعائية والمواد الترويجية</li>
-          <li>اللوحات البارزة واللافتات</li>
-          <li>استاندات عرض المنتجات والرول أب</li>
-          <li>البوثات وأجنحة المعارض</li>
-          <li>التصنيع والتوريد والتركيب</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</main>
+    </section>
 
-<section class="cta">
-  <div class="container">
-    <div class="cta-card">
-      <div>
-        <h2>جاهز لبناء حضور يليق بعلامتك التجارية؟</h2>
-        <p>إذا كنت تبحث عن شريك تسويق يفهم الصورة، المبيعات، والإنتاج التنفيذي من المحتوى وحتى المطبوعات والبوثات، فتواصل مع إيست تويست الآن.</p>
-      </div>
-      <a class="btn btn-primary" href="https://wa.me/966567031077" target="_blank">ابدأ عبر واتساب</a>
-    </div>
-  </div>
-</section>
-
-<a class="floating-whatsapp" href="https://wa.me/966567031077" target="_blank" aria-label="WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-    <path d="M12 5C8.2 5 5.2 7.9 5.2 11.5C5.2 12.8 5.6 14 6.4 15.1L5.6 18.5L9.1 17.6C10 18.1 11 18.3 12 18.3C15.8 18.3 18.8 15.4 18.8 11.8C18.8 8.1 15.8 5 12 5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-    <path d="M10 10.3C10.1 11.1 10.5 11.8 11 12.4C11.7 13.1 12.4 13.6 13.4 13.9C13.7 14 14 13.9 14.2 13.7L14.8 13.1C14.9 13 15.1 13 15.2 13.1L16.3 13.7C16.5 13.8 16.6 14 16.5 14.2C16.2 15.1 15.3 15.6 14.3 15.4C12.9 15.1 11.6 14.4 10.6 13.4C9.6 12.4 8.9 11.2 8.6 9.8C8.4 8.9 8.9 8 9.8 7.7C10 7.6 10.2 7.7 10.3 7.9L10.9 9C11 9.1 11 9.3 10.9 9.4L10.3 10C10.1 10.1 10 10.2 10 10.3Z" stroke="currentColor" stroke-width="1.5"/>
-  </svg>
-</a>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-panel">
-      <div>
-        <div class="footer-brand">
-          <img src="logo-et.png" alt="East Twist Logo" />
+    <section class="section reveal">
+      <div class="container">
+        <div class="section-head">
           <div>
-            <strong style="display:block;color:var(--primary);font-size:1.08rem;">East Twist</strong>
-            <span style="color:var(--muted);">إيست تويست للدعاية والإعلان والتسويق الرقمي</span>
+            <div class="badge">ما الذي يميزنا؟</div>
+            <h2>نربط بين التسويق والإبداع والتنفيذ</h2>
+          </div>
+          <p>هذا ما يجعل إيست تويست أكثر من مجرد جهة تدير حسابات أو تصمم منشورات.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="why-card">
+            <h3>فهم حقيقي لاحتياجات السوق</h3>
+            <p>نحلل النشاط والمنافسين والجمهور، ثم نبني الشكل والمحتوى والرسالة وفق ما يخدم النتائج.</p>
+          </div>
+
+          <div class="why-card">
+            <h3>إنتاج بصري احترافي</h3>
+            <p>من التصوير والريلز إلى التصميم والهوية البصرية، نهتم أن يخرج كل عنصر بشكل يليق بالبراند.</p>
+          </div>
+
+          <div class="why-card">
+            <h3>قدرة تنفيذ ميداني فعلية</h3>
+            <p>ننفذ المطبوعات، الهدايا الدعائية، اللوحات، البوثات، الاستاندات، ومواد العرض مع التصنيع والتوريد والتركيب.</p>
           </div>
         </div>
-        <div class="copyright">© 2026 جميع الحقوق محفوظة لإيست تويست</div>
       </div>
-      <div class="footer-links">
-        <a href="index.html">الرئيسية</a>
-        <a href="about.html">من نحن</a>
-        <a href="services.html">خدماتنا</a>
-        <a href="works.html">أعمالنا</a>
-        <a href="offers.html">العروض والباقات</a>
-        <a href="contact.html">تواصل معنا</a>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="feature-banner">
+          <div class="badge">خبراتنا</div>
+          <h2>من التسويق الإلكتروني إلى التنفيذ على أرض الواقع</h2>
+          <p>
+            تشمل خبرات إيست تويست: إدارة السوشيال ميديا، الحملات الإعلانية، التصوير، الفيديو، التصميم، تطوير المواقع، المواد الطباعية، الهدايا الدعائية، اللوحات البارزة، البوثات، ستاندات عرض المنتجات، وتنفيذ حلول العرض التجارية.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta reveal">
+      <div class="container">
+        <div class="cta-card">
+          <div>
+            <h2>هل تبحث عن شريك يفهم الصورة والبيع والتنفيذ؟</h2>
+            <p>إيست تويست مستعدة لبناء تجربة تسويقية ودعائية متكاملة لعلامتك من البداية حتى التنفيذ النهائي.</p>
+          </div>
+          <a class="btn btn-primary" href="contact.html">تواصل معنا</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="floating-whatsapp" href="https://wa.me/966567031077" target="_blank" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5C8.2 5 5.2 7.9 5.2 11.5C5.2 12.8 5.6 14 6.4 15.1L5.6 18.5L9.1 17.6C10 18.1 11 18.3 12 18.3C15.8 18.3 18.8 15.4 18.8 11.8C18.8 8.1 15.8 5 12 5Z" stroke="currentColor" stroke-width="1.8"/>
+    </svg>
+  </a>
+
+  <footer>
+    <div class="container">
+      <div class="footer-panel">
+        <div>
+          <div class="footer-brand">
+            <img src="IMG_4515.png" alt="East Twist Logo">
+            <div>
+              <strong style="display:block;color:var(--primary);font-size:1.08rem;">East Twist</strong>
+              <span style="color:var(--muted);">إيست تويست للدعاية والإعلان والتسويق الرقمي</span>
+            </div>
+          </div>
+          <div class="copyright">© 2026 جميع الحقوق محفوظة لإيست تويست</div>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html">الرئيسية</a>
+          <a href="about.html">من نحن</a>
+          <a href="services.html">خدماتنا</a>
+          <a href="works.html">أعمالنا</a>
+          <a href="offers.html">العروض والباقات</a>
+          <a href="contact.html">تواصل معنا</a>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
-</div>
-<script src="script.js"></script>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
