@@ -8,234 +8,27 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="blur-orb"></div>
-  <div class="blur-orb-2"></div>
-  <div class="blur-orb-3"></div>
-
-  <header class="topbar">
-    <div class="container nav">
-      <a href="index.html" class="brand">
-        <img src="IMG_4515.png" alt="East Twist Logo">
-        <div class="brand-text">
-          <strong>East Twist</strong>
-          <span>إيست تويست للدعاية والإعلان والتسويق الرقمي</span>
-        </div>
-      </a>
-
-      <div class="desktop-nav">
-        <nav class="nav-links">
-          <a href="index.html">الرئيسية</a>
-          <a href="about.html">من نحن</a>
-          <a class="active" href="services.html">خدماتنا</a>
-          <a href="works.html">أعمالنا</a>
-          <a href="offers.html">العروض والباقات</a>
-          <a href="contact.html">تواصل معنا</a>
-        </nav>
-      </div>
-
-      <div class="nav-actions">
-        <a class="btn btn-primary desktop-cta" href="contact.html">ابدأ معنا</a>
-        <button class="mobile-btn" id="menuBtn" aria-label="فتح القائمة">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-            <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-  <aside class="mobile-drawer" id="mobileDrawer">
-    <div class="drawer-head">
-      <div class="drawer-brand">
-        <img src="IMG_4515.png" alt="East Twist Logo">
-        <div>
-          <strong>East Twist</strong>
-          <span>إيست تويست للدعاية والإعلان والتسويق الرقمي</span>
-        </div>
-      </div>
-      <button class="drawer-close" id="closeMenuBtn" aria-label="إغلاق القائمة">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-      </button>
-    </div>
-    <nav class="drawer-links">
-      <a href="index.html">الرئيسية</a>
-      <a href="about.html">من نحن</a>
-      <a class="active" href="services.html">خدماتنا</a>
-      <a href="works.html">أعمالنا</a>
-      <a href="offers.html">العروض والباقات</a>
-      <a href="contact.html">تواصل معنا</a>
-    </nav>
-  </aside>
-
-  <main>
-    <section class="page-hero reveal active">
-      <div class="container">
-        <div class="page-hero-box">
-          <div class="badge">خدماتنا</div>
-          <h1>حلول تسويقية ودعائية متكاملة تدعم حضورك داخل السوق</h1>
-          <p>نعمل على أن تكون كل خدمة جزءًا من منظومة متناسقة ترفع الثقة بالعلامة وتزيد فرص البيع والتفاعل.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <div class="container">
-        <div class="grid-2">
-          <div class="service-card">
-            <h3>إدارة السوشيال ميديا</h3>
-            <p>إدارة الحسابات بخطط شهرية واضحة، تنظيم المحتوى، جدولة النشر، متابعة الرسائل والتفاعل، وتطوير الشكل العام للحسابات.</p>
-            <ul class="clean-list">
-              <li>خطة محتوى شهرية</li>
-              <li>إدارة النشر والتفاعل</li>
-              <li>توحيد الهوية البصرية</li>
-              <li>تقارير أداء دورية</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <h3>الحملات الإعلانية الممولة</h3>
-            <p>بناء وإدارة حملات إعلانية تستهدف الجمهور الصحيح على Meta وTikTok وGoogle بهدف الوصول والاستفسارات والبيع.</p>
-            <ul class="clean-list">
-              <li>إعداد الحملات وتقسيمها</li>
-              <li>اختبار الجماهير والإعلانات</li>
-              <li>إعادة الاستهداف</li>
-              <li>تحسين الميزانية والعائد</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <h3>التصوير الفوتوغرافي</h3>
-            <p>تصوير المنتجات والخدمات والمقرات والمشاريع والفعاليات بصورة ترفع قيمة البراند وتدعم المحتوى والإعلانات.</p>
-            <ul class="clean-list">
-              <li>تصوير منتجات</li>
-              <li>تصوير خدمات ومشاريع</li>
-              <li>تصوير أماكن ومنشآت</li>
-              <li>تصوير فعاليات وتغطيات</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <h3>تصوير الفيديو والريلز</h3>
-            <p>إنتاج فيديوهات قصيرة ومحتوى ريلز احترافي يشرح، يجذب، ويعكس قوة المشروع بأسلوب حديث يناسب المنصات.</p>
-            <ul class="clean-list">
-              <li>ريلز تسويقية</li>
-              <li>فيديوهات تعريفية</li>
-              <li>مونتاج احترافي</li>
-              <li>محتوى إعلاني قصير</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <h3>التصميم الجرافيكي والهوية</h3>
-            <p>تصميم المنشورات، العروض، البروفايلات، والمطبوعات، مع تطوير هوية بصرية متناسقة تدعم البراند.</p>
-            <ul class="clean-list">
-              <li>تصميم سوشيال ميديا</li>
-              <li>مطويات وبروفايلات</li>
-              <li>عروض تقديمية</li>
-              <li>تطوير هوية بصرية</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <h3>تصميم وتطوير المواقع</h3>
-            <p>إنشاء مواقع تعريفية وتجارية متجاوبة، سريعة، وجذابة بصريًا، تساعد العميل على فهم الخدمة والتواصل بسهولة.</p>
-            <ul class="clean-list">
-              <li>مواقع تعريفية</li>
-              <li>صفحات هبوط</li>
-              <li>تحسين تجربة المستخدم</li>
-              <li>ربط مباشر بوسائل التواصل</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <h3>المطبوعات بجميع أنواعها</h3>
-            <p>تنفيذ المواد الطباعية التي تحتاجها الشركات والمعارض ونقاط البيع بهوية احترافية وجودة تنفيذ عالية.</p>
-            <ul class="clean-list">
-              <li>كروت وبروشورات</li>
-              <li>رولات وبنرات</li>
-              <li>منيوهات وفليرات</li>
-              <li>ملفات عرض وقرطاسية</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <h3>الهدايا الدعائية</h3>
-            <p>اختيار وتصميم وتنفيذ الهدايا الدعائية التي تعزز حضور العلامة وتبقيها حاضرة في ذهن العميل.</p>
-            <ul class="clean-list">
-              <li>أكواب وأقلام</li>
-              <li>حقائب ومنتجات مخصصة</li>
-              <li>هدايا معارض ومؤتمرات</li>
-              <li>تنفيذ بهوية البراند</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <h3>اللوحات البارزة والبوثات والاستاندات</h3>
-            <p>تصميم وتصنيع وتوريد وتركيب اللوحات التجارية، البوثات، واستاندات عرض المنتجات بصورة احترافية تلفت الانتباه.</p>
-            <ul class="clean-list">
-              <li>لوحات خارجية وداخلية</li>
-              <li>بوثات معارض</li>
-              <li>ستاندات عرض منتجات</li>
-              <li>تنفيذ وتركيب كامل</li>
-            </ul>
-          </div>
-
-          <div class="service-card">
-            <h3>تحليل المنافسين والاستراتيجية</h3>
-            <p>نساعدك على فهم السوق والمنافسين وبناء رسائل وعروض ومحتوى وإعلانات أكثر دقة وتأثيرًا.</p>
-            <ul class="clean-list">
-              <li>قراءة المنافسين</li>
-              <li>تحليل الحضور الرقمي</li>
-              <li>بناء الرسائل التسويقية</li>
-              <li>تحديد فرص التطوير</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta reveal">
-      <div class="container">
-        <div class="cta-card">
-          <div>
-            <h2>اختر الخدمات التي تناسب مشروعك وسنقترح لك الأنسب</h2>
-            <p>سواء كنت تحتاج إدارة تسويق متكاملة أو تنفيذ جزء محدد، نستطيع تجهيز عرض واضح يناسب احتياجك الفعلي.</p>
-          </div>
-          <a class="btn btn-primary" href="contact.html">اطلب عرض سعر</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-panel">
-        <div>
-          <div class="footer-brand">
-            <img src="IMG_4515.png" alt="East Twist Logo">
-            <div>
-              <strong style="display:block;color:var(--primary);font-size:1.08rem;">East Twist</strong>
-              <span style="color:var(--muted);">إيست تويست للدعاية والإعلان والتسويق الرقمي</span>
-            </div>
-          </div>
-          <div class="copyright">© 2026 جميع الحقوق محفوظة لإيست تويست</div>
-        </div>
-
-        <div class="footer-links">
-          <a href="index.html">الرئيسية</a>
-          <a href="about.html">من نحن</a>
-          <a href="services.html">خدماتنا</a>
-          <a href="works.html">أعمالنا</a>
-          <a href="offers.html">العروض والباقات</a>
-          <a href="contact.html">تواصل معنا</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+<div class="blur-orb"></div><div class="blur-orb-2"></div><div class="blur-orb-3"></div>
+<header class="topbar"><div class="container nav"><a href="index.html" class="brand"><img src="IMG_4515.png" alt="East Twist Logo"><div class="brand-text"><strong>East Twist</strong><span>إيست تويست للدعاية والإعلان والتسويق الرقمي</span></div></a><div class="desktop-nav"><nav class="nav-links"><a href="index.html">الرئيسية</a><a href="about.html">من نحن</a><a class="active" href="services.html">خدماتنا</a><a href="works.html">أعمالنا</a><a href="offers.html">العروض والباقات</a><a href="contact.html">تواصل معنا</a></nav></div><div class="nav-actions"><a class="btn btn-primary desktop-cta" href="contact.html">ابدأ معنا</a><button class="mobile-btn" id="menuBtn" aria-label="فتح القائمة"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div></div></header>
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer"><div class="drawer-head"><div class="drawer-brand"><img src="IMG_4515.png" alt="East Twist Logo"><div><strong>East Twist</strong><span>إيست تويست للدعاية والإعلان والتسويق الرقمي</span></div></div><button class="drawer-close" id="closeMenuBtn" aria-label="إغلاق القائمة"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div><nav class="drawer-links"><a href="index.html">الرئيسية</a><a href="about.html">من نحن</a><a class="active" href="services.html">خدماتنا</a><a href="works.html">أعمالنا</a><a href="offers.html">العروض والباقات</a><a href="contact.html">تواصل معنا</a></nav></aside>
+<main>
+<section class="page-hero reveal active"><div class="container"><div class="page-hero-box"><div class="badge">خدماتنا</div><h1>حلول تسويقية ودعائية متكاملة تدعم الحضور وتخدم البيع</h1><p>كل خدمة لدينا مصممة لتكون جزءًا من منظومة متناسقة ترفع الجاذبية والثقة وتدعم النتائج.</p></div></div></section>
+<section class="section reveal"><div class="container"><div class="grid-2">
+<div class="service-card"><h3>إدارة السوشيال ميديا</h3><p>إدارة احترافية للحسابات بخطط شهرية واضحة، تنظيم المحتوى، النشر، المتابعة، وتطوير الشكل العام للحسابات.</p><ul class="clean-list"><li>خطة محتوى شهرية</li><li>إدارة النشر والتفاعل</li><li>تطوير بروفايل الحسابات</li><li>تقارير وتوصيات</li></ul></div>
+<div class="service-card"><h3>الحملات الإعلانية الممولة</h3><p>إعداد وإدارة حملات على Meta وTikTok وGoogle وفق هدف واضح: انتشار، استفسارات، أو مبيعات.</p><ul class="clean-list"><li>إعداد الحملات وتقسيمها</li><li>اختبار الجماهير والإعلانات</li><li>إعادة الاستهداف</li><li>تحسين العائد من الميزانية</li></ul></div>
+<div class="service-card"><h3>التصوير الفوتوغرافي</h3><p>تصوير المنتجات والخدمات والمشاريع والمقار والفعاليات بصورة ترفع قيمة البراند وتدعم المحتوى والإعلانات.</p><ul class="clean-list"><li>تصوير منتجات</li><li>تصوير خدمات ومشاريع</li><li>تصوير أماكن ومنشآت</li><li>تصوير فعاليات</li></ul></div>
+<div class="service-card"><h3>تصوير الفيديو والريلز</h3><p>إنتاج فيديوهات قصيرة وريلز حديثة تعكس هوية البراند وتناسب المنصات وتشد الانتباه بسرعة.</p><ul class="clean-list"><li>ريلز تسويقية</li><li>فيديوهات تعريفية</li><li>إعلانات قصيرة</li><li>مونتاج احترافي</li></ul></div>
+<div class="service-card"><h3>التصميم الجرافيكي والهوية</h3><p>تصميم المنشورات والمطبوعات والعروض والبروفايلات مع تطوير هوية بصرية أكثر احترافًا وتميزًا.</p><ul class="clean-list"><li>تصميم سوشيال ميديا</li><li>عروض وبروفايلات</li><li>مطبوعات وملفات بيع</li><li>تطوير هوية بصرية</li></ul></div>
+<div class="service-card"><h3>تصميم وتطوير المواقع</h3><p>مواقع تعريفية وتسويقية متجاوبة وسريعة وسهلة التصفح تدعم صورة العلامة وتسهّل الإقناع.</p><ul class="clean-list"><li>مواقع تعريفية</li><li>صفحات هبوط</li><li>تحسين تجربة المستخدم</li><li>ربط مباشر بوسائل التواصل</li></ul></div>
+<div class="service-card"><h3>المطبوعات بجميع أنواعها</h3><p>تنفيذ مواد دعائية وطباعية متنوعة للشركات والمعارض ونقاط البيع بهوية احترافية وجودة إنتاج عالية.</p><ul class="clean-list"><li>كروت وبروشورات</li><li>رولات وبنرات</li><li>منيوهات وفليرات</li><li>قرطاسية وملفات رسمية</li></ul></div>
+<div class="service-card"><h3>الهدايا الدعائية</h3><p>اختيار وتصميم وتنفيذ الهدايا الدعائية التي تعزز حضور العلامة وتبقيها حاضرة في ذهن العميل.</p><ul class="clean-list"><li>أكواب وأقلام</li><li>حقائب ومنتجات مخصصة</li><li>هدايا معارض ومؤتمرات</li><li>تنفيذ بهوية البراند</li></ul></div>
+<div class="service-card"><h3>اللوحات والبوثات والاستاندات</h3><p>تصميم وتصنيع وتوريد وتركيب اللوحات التجارية، البوثات، واستاندات عرض المنتجات والمواد الخاصة بنقاط البيع.</p><ul class="clean-list"><li>لوحات خارجية وداخلية</li><li>بوثات معارض</li><li>ستاندات عرض منتجات</li><li>تنفيذ وتركيب كامل</li></ul></div>
+<div class="service-card"><h3>تحليل المنافسين والاستراتيجية</h3><p>نساعدك على قراءة السوق والمنافسين وصياغة الرسائل والعروض والمحتوى المناسب لتحقيق حضور أكثر قوة.</p><ul class="clean-list"><li>قراءة المنافسين</li><li>تحليل الحضور الرقمي</li><li>بناء الرسائل التسويقية</li><li>تحديد فرص التطوير</li></ul></div>
+</div></div></section>
+<section class="cta reveal"><div class="container"><div class="cta-card"><div><h2>اختر الخدمات التي يحتاجها مشروعك فعلًا</h2><p>سواء كنت تحتاج إدارة متكاملة أو تنفيذ جزء محدد، نستطيع تجهيز تصور مناسب بحسب هدفك وميزانيتك.</p></div><a class="btn btn-primary" href="contact.html">اطلب عرضًا مخصصًا</a></div></div></section>
+</main>
+<footer><div class="container"><div class="footer-panel"><div><div class="footer-brand"><img src="IMG_4515.png" alt="East Twist Logo"><div><strong style="display:block;color:var(--primary);font-size:1.08rem;">East Twist</strong><span style="color:var(--muted);">إيست تويست للدعاية والإعلان والتسويق الرقمي</span></div></div><div class="copyright">© 2026 جميع الحقوق محفوظة لإيست تويست</div></div><div class="footer-links"><a href="index.html">الرئيسية</a><a href="about.html">من نحن</a><a href="services.html">خدماتنا</a><a href="works.html">أعمالنا</a><a href="offers.html">العروض والباقات</a><a href="contact.html">تواصل معنا</a></div></div></div></footer>
+<script src="script.js"></script>
 </body>
 </html>
