@@ -1,57 +1,54 @@
-
 const body = document.body;
-const html = document.documentElement;
-const menuBtn = document.getElementById('menuBtn');
-const navMenu = document.getElementById('navMenu');
-const langToggle = document.getElementById('langToggle');
+const menuBtn = document.getElementById("menuBtn");
+const closeMenuBtn = document.getElementById("closeMenuBtn");
+const mobileDrawer = document.getElementById("mobileDrawer");
+const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
 
-if(menuBtn && navMenu){
-  menuBtn.addEventListener('click', ()=> navMenu.classList.toggle('show'));
-  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=> navMenu.classList.remove('show')));
+function openMenu() {
+  if (!mobileDrawer || !mobileMenuOverlay) return;
+  mobileDrawer.classList.add("show");
+  mobileMenuOverlay.classList.add("show");
+  body.classList.add("menu-open");
 }
 
-if(langToggle){
-  langToggle.addEventListener('click', ()=>{
-    body.classList.toggle('en');
-    if(body.classList.contains('en')){
-      html.setAttribute('lang','en');
-      html.setAttribute('dir','ltr');
-    }else{
-      html.setAttribute('lang','ar');
-      html.setAttribute('dir','rtl');
-    }
+function closeMenu() {
+  if (!mobileDrawer || !mobileMenuOverlay) return;
+  mobileDrawer.classList.remove("show");
+  mobileMenuOverlay.classList.remove("show");
+  body.classList.remove("menu-open");
+}
+
+if (menuBtn) menuBtn.addEventListener("click", openMenu);
+if (closeMenuBtn) closeMenuBtn.addEventListener("click", closeMenu);
+if (mobileMenuOverlay) mobileMenuOverlay.addEventListener("click", closeMenu);
+
+document.querySelectorAll(".drawer-links a").forEach(link => {
+  link.addEventListener("click", closeMenu);
+});
+
+const reveals = document.querySelectorAll(".reveal");
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.92;
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < triggerBottom) el.classList.add("active");
   });
-}
+};
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 
-const ytTrack = document.getElementById('ytTrack');
-const prevWork = document.getElementById('prevWork');
-const nextWork = document.getElementById('nextWork');
-function scrollAmount(){ return ytTrack ? Math.min(420, ytTrack.clientWidth * .92) : 0; }
-if(prevWork && ytTrack) prevWork.addEventListener('click', ()=> ytTrack.scrollBy({left:-scrollAmount(), behavior:'smooth'}));
-if(nextWork && ytTrack) nextWork.addEventListener('click', ()=> ytTrack.scrollBy({left:scrollAmount(), behavior:'smooth'}));
-
-const leadForm = document.getElementById('leadForm');
-if(leadForm){
-  leadForm.addEventListener('submit', function(e){
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", function(e){
     e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const company = document.getElementById('company').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const service = document.getElementById('service').value.trim();
-    const budget = document.getElementById('budget').value.trim();
-    const details = document.getElementById('details').value.trim();
-    const msg =
-`السلام عليكم، لدي طلب جديد من موقع East Twist:
 
-الاسم: ${name}
-اسم النشاط/الشركة: ${company}
-رقم الجوال: ${phone}
-الخدمة المطلوبة: ${service}
-الميزانية التقريبية: ${budget || '-'}
-تفاصيل المشروع:
-${details || '-'}
+    const name = document.getElementById("name")?.value || "";
+    const company = document.getElementById("company")?.value || "";
+    const phone = document.getElementById("phone")?.value || "";
+    const service = document.getElementById("service")?.value || "";
+    const details = document.getElementById("details")?.value || "";
 
-الرجاء التواصل معي في أقرب وقت.`;
-    window.open('https://wa.me/966567031077?text=' + encodeURIComponent(msg), '_blank');
+    const message = `مرحبًا، لدي استفسار جديد من موقع إيست تويست:%0A%0Aالاسم: ${name}%0Aاسم النشاط/الشركة: ${company}%0Aرقم الجوال: ${phone}%0Aالخدمة المطلوبة: ${service}%0Aالتفاصيل: ${details}`;
+    window.open(`https://wa.me/966567031077?text=${message}`, "_blank");
   });
 }
