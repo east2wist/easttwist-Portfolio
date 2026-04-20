@@ -1,0 +1,12 @@
+:root {
+    --primary-color: #1a202c; /* Dark gray for primary elements */
+    --secondary-color: #2d3748; /* Slightly lighter gray for secondary elements */
+    --accent-color: #f6e05e; /* Bright yellow for accents and highlights */
+    --background-color: #f7fafc; /* Light gray for background */
+    --text-color: #2d3748; /* Dark gray for text */
+    --muted-text-color: #718096; /* Gray for muted text */
+    --border-color: #e2e8f0; /* Light gray for borders */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Shadow color for elements */
+    --transition-speed: 0.3s; /* Speed for transitions */
+    --border-radius: 8px; /* Standard border radius for rounded corners */
+}

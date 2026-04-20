@@ -1,0 +1,34 @@
+{
+  "name": "marketing-agency-portfolio",
+  "version": "1.0.0",
+  "description": "A portfolio website for a marketing and advertising agency showcasing services, case studies, and client testimonials.",
+  "main": "src/app/page.tsx",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "marketing",
+    "agency",
+    "portfolio",
+    "nextjs",
+    "react"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "latest",
+    "postcss": "latest",
+    "autoprefixer": "latest"
+  },
+  "devDependencies": {
+    "typescript": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest"
+  }
+}
