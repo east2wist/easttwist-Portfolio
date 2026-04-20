@@ -4,19 +4,19 @@ const caseStudies = [
   {
     title: 'Project Alpha',
     description: 'A comprehensive digital marketing campaign that increased client engagement by 150%.',
-    image: '/images/case-study-alpha.jpg',
+    image: '/images/works/brand-identity.jpg',
     link: '/case-studies/alpha',
   },
   {
     title: 'Project Beta',
     description: 'An innovative social media strategy that boosted brand awareness significantly.',
-    image: '/images/case-study-beta.jpg',
+    image: '/images/works/social-media-marketing.jpg',
     link: '/case-studies/beta',
   },
   {
     title: 'Project Gamma',
     description: 'A successful SEO overhaul that improved search rankings and organic traffic.',
-    image: '/images/case-study-gamma.jpg',
+    image: '/images/works/seo-optimization.jpg',
     link: '/case-studies/gamma',
   },
 ];

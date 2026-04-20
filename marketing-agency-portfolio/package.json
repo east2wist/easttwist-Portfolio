@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build && next export",
     "start": "next start",
     "lint": "eslint ."
   },
@@ -24,7 +25,8 @@
     "react-dom": "latest",
     "tailwindcss": "latest",
     "postcss": "latest",
-    "autoprefixer": "latest"
+    "autoprefixer": "latest",
+    "react-responsive-carousel": "^3.2.23"
   },
   "devDependencies": {
     "typescript": "latest",

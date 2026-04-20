@@ -58,3 +58,53 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact
 
 For any inquiries, please reach out to [your-email@example.com].
+
+## Deployment to GitHub Pages (added)
+
+This repo is prepared for static export and GH Pages deployment. I added a workflow `.github/workflows/gh-pages.yml` that runs on push to `main`, builds the app with `npm run export`, and publishes the generated `out/` folder to the `gh-pages` branch.
+
+Quick steps to deploy:
+
+1. Create a GitHub repo and push this project to `main`.
+2. If the site will be served under a repo subpath (e.g. `https://USERNAME.github.io/REPO_NAME/`), update `next.config.js` and set `basePath` and `assetPrefix` to `/REPO_NAME`.
+3. Push to `main`. The Actions workflow will build and deploy automatically.
+
+Preview the exported output locally:
+
+```bash
+npm ci
+npm run export
+npx http-server out -p 8080
+# open http://localhost:8080
+```
+
+If you'd like, I can now:
+
+- Replace the placeholder SVGs in `public/images/` with curated photographs or illustrations.
+- Swap the simple icons for a professional icon set and update components to use them.
+- Update the `Hero`, `Services`, and `CaseStudies` components to include the new visuals.
+
+Tell me which of these you'd like me to implement next.
+
+---
+
+## Finalized: What I did
+
+- Added professional SVG icons in `public/icons/` and illustrative placeholders in `public/images/` (used across `Hero`, `Services`, `CaseStudies`, `PortfolioCarousel`, and `Navbar`).
+- Added a GitHub Actions workflow at `.github/workflows/gh-pages.yml` to export and publish the `out/` directory to `gh-pages`.
+- Added `npm run export` and `next.config.js` settings for static export.
+- Added `DEPLOY.md` with step-by-step instructions for GitHub Pages and Vercel.
+
+## Next actions I can take (pick any)
+
+- Push a branch and open a PR that sets `basePath`/`assetPrefix` for your repo name.
+- Add a `CNAME` or prepare DNS-ready instructions for a custom domain.
+- Replace SVG placeholders with curated royalty-free photography and optimize images.
+
+- I replaced SVG placeholders with curated Unsplash photos (remote URLs) for `Hero`, `CaseStudies`, and the portfolio `works` data. To preview the exported site exactly as deployed, run `npm run export` and serve the `out/` folder.
+ - I replaced SVG placeholders with curated Unsplash photos and added a helper script to bundle them locally.
+    - Run `scripts/download-images.sh` locally to download images into `public/images/`.
+    - After running the script, `public/images/` will contain the photos and the site will reference them locally.
+    - Then run `npm run export` and serve `out/` to preview the exported site.
+
+See `DEPLOY.md` for detailed deployment instructions.
