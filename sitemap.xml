@@ -1,18 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/index.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/about.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/services.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/works.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/offers.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/contact.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/social-media-management.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/paid-ads.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/photography.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/reels-video.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/branding-design.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/web-design-development.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/printing-promotional-items.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/booths-signage-stands.html</loc></url>
-  <url><loc>https://east2wist.github.io/easttwist-Portfolio/competitor-analysis-strategy.html</loc></url>
+
+  <!-- MAIN PAGES -->
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/index.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/about.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/services.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/works.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/offers.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/contact.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- SERVICES PAGES -->
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/social-media-management.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/paid-ads.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/web-design-development.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/branding-design.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/reels-video.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/photography.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/printing-promotional-items.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/booths-signage-stands.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://east2wist.github.io/easttwist-Portfolio/competitor-analysis-strategy.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.90</priority>
+  </url>
+
 </urlset>
