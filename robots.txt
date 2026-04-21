@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://east2wist.github.io/easttwist-Portfolio/sitemap.xml
