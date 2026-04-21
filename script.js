@@ -207,7 +207,41 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================
-     OPTIONAL PARALLAX FOR HERO IMAGE
+     WHATSAPP FORM (NEW)
+  ========================= */
+  const leadForm = document.getElementById("leadForm");
+
+  if (leadForm) {
+    leadForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const data = new FormData(leadForm);
+
+      const name = (data.get("name") || "").toString().trim();
+      const business = (data.get("business") || "").toString().trim();
+      const phone = (data.get("phone") || "").toString().trim();
+      const service = (data.get("service") || "").toString().trim();
+      const message = (data.get("message") || "").toString().trim();
+
+      const lines = [
+        "مرحبًا، أرغب في طلب خدمة من إيست تويست.",
+        name ? `الاسم: ${name}` : "",
+        business ? `النشاط: ${business}` : "",
+        phone ? `رقم التواصل: ${phone}` : "",
+        service ? `الخدمة: ${service}` : "",
+        message ? `التفاصيل: ${message}` : ""
+      ].filter(Boolean);
+
+      const url =
+        "https://wa.me/966567031077?text=" +
+        encodeURIComponent(lines.join("\n"));
+
+      window.open(url, "_blank", "noopener");
+    });
+  }
+
+  /* =========================
+     PARALLAX
   ========================= */
   const heroVisualImage = document.querySelector(".hero-visual img");
 
