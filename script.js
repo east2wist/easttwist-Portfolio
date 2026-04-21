@@ -43,3 +43,15 @@ if(form){
     window.open(`https://wa.me/966567031077?text=${text}`, "_blank");
   });
 }
+
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+    reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+
+        if (top < window.innerHeight - 100) {
+            el.classList.add("active");
+        }
+    });
+});
