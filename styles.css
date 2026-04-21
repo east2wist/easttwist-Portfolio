@@ -911,3 +911,21 @@ textarea:focus-visible {
     transform: none;
   }
 }
+
+.nav-link.is-active {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.header.is-scrolled {
+  background: rgba(6, 8, 22, 0.82);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.hero-visual img {
+  transition: transform 0.2s linear;
+}
