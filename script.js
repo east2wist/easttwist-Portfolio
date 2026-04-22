@@ -256,3 +256,25 @@ document.addEventListener("DOMContentLoaded", () => {
   handleParallax();
   window.addEventListener("scroll", handleParallax, { passive: true });
 });
+
+  const serviceSlider = document.getElementById("serviceSlider");
+  const prevBtn = document.querySelector(".slider-prev");
+  const nextBtn = document.querySelector(".slider-next");
+
+  if (serviceSlider && prevBtn && nextBtn) {
+    const slideAmount = 320;
+
+    prevBtn.addEventListener("click", () => {
+      serviceSlider.scrollBy({
+        left: -slideAmount,
+        behavior: "smooth",
+      });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      serviceSlider.scrollBy({
+        left: slideAmount,
+        behavior: "smooth",
+      });
+    });
+  }
