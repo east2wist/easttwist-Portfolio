@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-link");
   const revealElements = document.querySelectorAll(".reveal");
   const counterElements = document.querySelectorAll("[data-counter]");
+  const heroVisualImage = document.querySelector(".hero-visual img");
+  const leadForm = document.getElementById("leadForm");
+
+  const serviceSlider = document.getElementById("serviceSlider");
+  const prevBtn = document.querySelector(".slider-prev");
+  const nextBtn = document.querySelector(".slider-next");
 
   /* =========================
      MOBILE MENU
@@ -43,8 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("click", (event) => {
-      const clickedInsideNav = nav.contains(event.target);
-      const clickedToggle = menuToggle.contains(event.target);
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+
+      const clickedInsideNav = nav.contains(target);
+      const clickedToggle = menuToggle.contains(target);
 
       if (!clickedInsideNav && !clickedToggle) {
         closeMenu();
@@ -70,9 +79,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
   navLinks.forEach((link) => {
-    const linkPage = link.getAttribute("href");
+    const href = link.getAttribute("href");
+    if (!href) return;
 
-    if (linkPage === currentPage) {
+    if (
+      href === currentPage ||
+      (currentPage === "" && href === "index.html") ||
+      (currentPage === "/" && href === "index.html")
+    ) {
       link.classList.add("is-active");
       link.setAttribute("aria-current", "page");
     }
@@ -92,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   handleHeaderScroll();
-  window.addEventListener("scroll", handleHeaderScroll);
+  window.addEventListener("scroll", handleHeaderScroll, { passive: true });
 
   /* =========================
      REVEAL ON SCROLL
@@ -102,10 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const revealObserver = new IntersectionObserver(
         (entries, observer) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            }
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
           });
         },
         {
@@ -133,22 +146,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (Number.isNaN(target)) return;
 
-    let start = 0;
+    const prefix = element.dataset.prefix || "";
+    const suffix = element.dataset.suffix || "";
+
     let startTime = null;
 
     const step = (timestamp) => {
       if (!startTime) startTime = timestamp;
 
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      const currentValue = Math.floor(easeOut * (target - start) + start);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const currentValue = Math.floor(eased * target);
 
-      element.textContent = currentValue.toLocaleString("en-US");
+      element.textContent = `${prefix}${currentValue.toLocaleString("en-US")}${suffix}`;
 
       if (progress < 1) {
         window.requestAnimationFrame(step);
       } else {
-        element.textContent = target.toLocaleString("en-US");
+        element.textContent = `${prefix}${target.toLocaleString("en-US")}${suffix}`;
       }
     };
 
@@ -160,10 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const counterObserver = new IntersectionObserver(
         (entries, observer) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              animateCounter(entry.target);
-              observer.unobserve(entry.target);
-            }
+            if (!entry.isIntersecting) return;
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
           });
         },
         {
@@ -194,11 +208,14 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
 
       const headerHeight = header ? header.offsetHeight : 0;
-      const targetPosition =
-        targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 12;
+      const offsetTop =
+        targetElement.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerHeight -
+        12;
 
       window.scrollTo({
-        top: targetPosition,
+        top: offsetTop,
         behavior: "smooth",
       });
 
@@ -207,13 +224,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================
-     WHATSAPP FORM (NEW)
+     WHATSAPP FORM
   ========================= */
-  const leadForm = document.getElementById("leadForm");
-
   if (leadForm) {
-    leadForm.addEventListener("submit", (e) => {
-      e.preventDefault();
+    leadForm.addEventListener("submit", (event) => {
+      event.preventDefault();
 
       const data = new FormData(leadForm);
 
@@ -229,22 +244,20 @@ document.addEventListener("DOMContentLoaded", () => {
         business ? `النشاط: ${business}` : "",
         phone ? `رقم التواصل: ${phone}` : "",
         service ? `الخدمة: ${service}` : "",
-        message ? `التفاصيل: ${message}` : ""
+        message ? `التفاصيل: ${message}` : "",
       ].filter(Boolean);
 
-      const url =
+      const whatsappUrl =
         "https://wa.me/966567031077?text=" +
         encodeURIComponent(lines.join("\n"));
 
-      window.open(url, "_blank", "noopener");
+      window.open(whatsappUrl, "_blank", "noopener");
     });
   }
 
   /* =========================
-     PARALLAX
+     HERO PARALLAX
   ========================= */
-  const heroVisualImage = document.querySelector(".hero-visual img");
-
   const handleParallax = () => {
     if (!heroVisualImage) return;
     if (window.innerWidth < 821) return;
@@ -253,28 +266,106 @@ document.addEventListener("DOMContentLoaded", () => {
     heroVisualImage.style.transform = `translateY(${offset}px)`;
   };
 
-  handleParallax();
-  window.addEventListener("scroll", handleParallax, { passive: true });
-});
+  if (heroVisualImage) {
+    handleParallax();
+    window.addEventListener("scroll", handleParallax, { passive: true });
+  }
 
-  const serviceSlider = document.getElementById("serviceSlider");
-  const prevBtn = document.querySelector(".slider-prev");
-  const nextBtn = document.querySelector(".slider-next");
+  /* =========================
+     SERVICE SLIDER
+  ========================= */
+  if (serviceSlider) {
+    const getSlideAmount = () => {
+      const firstSlide = serviceSlider.querySelector(".service-slide");
+      if (!firstSlide) return 320;
 
-  if (serviceSlider && prevBtn && nextBtn) {
-    const slideAmount = 320;
+      const slideWidth = firstSlide.getBoundingClientRect().width;
+      const sliderStyle = window.getComputedStyle(serviceSlider);
+      const gapValue = parseFloat(sliderStyle.columnGap || sliderStyle.gap || "18");
 
-    prevBtn.addEventListener("click", () => {
+      return slideWidth + gapValue;
+    };
+
+    const scrollSlider = (direction) => {
       serviceSlider.scrollBy({
-        left: -slideAmount,
+        left: direction * getSlideAmount(),
         behavior: "smooth",
       });
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        scrollSlider(-1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        scrollSlider(1);
+      });
+    }
+
+    /* =========================
+       DRAG / SWIPE SUPPORT
+    ========================= */
+    let isPointerDown = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+
+    const onPointerDown = (clientX) => {
+      isPointerDown = true;
+      startX = clientX;
+      startScrollLeft = serviceSlider.scrollLeft;
+      serviceSlider.classList.add("is-dragging");
+    };
+
+    const onPointerMove = (clientX) => {
+      if (!isPointerDown) return;
+      const distance = clientX - startX;
+      serviceSlider.scrollLeft = startScrollLeft - distance;
+    };
+
+    const onPointerUp = () => {
+      isPointerDown = false;
+      serviceSlider.classList.remove("is-dragging");
+    };
+
+    serviceSlider.addEventListener("mousedown", (event) => {
+      onPointerDown(event.pageX);
     });
 
-    nextBtn.addEventListener("click", () => {
-      serviceSlider.scrollBy({
-        left: slideAmount,
-        behavior: "smooth",
-      });
+    serviceSlider.addEventListener("mousemove", (event) => {
+      onPointerMove(event.pageX);
+    });
+
+    serviceSlider.addEventListener("mouseleave", () => {
+      onPointerUp();
+    });
+
+    serviceSlider.addEventListener("mouseup", () => {
+      onPointerUp();
+    });
+
+    serviceSlider.addEventListener(
+      "touchstart",
+      (event) => {
+        if (!event.touches.length) return;
+        onPointerDown(event.touches[0].clientX);
+      },
+      { passive: true }
+    );
+
+    serviceSlider.addEventListener(
+      "touchmove",
+      (event) => {
+        if (!event.touches.length) return;
+        onPointerMove(event.touches[0].clientX);
+      },
+      { passive: true }
+    );
+
+    serviceSlider.addEventListener("touchend", () => {
+      onPointerUp();
     });
   }
+});
