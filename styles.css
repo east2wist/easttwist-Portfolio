@@ -1777,3 +1777,11 @@ body.menu-open {
     transform: none;
   }
 }
+.service-slider.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+  scroll-behavior: auto;
+}
+.service-slider {
+  cursor: grab;
+}
