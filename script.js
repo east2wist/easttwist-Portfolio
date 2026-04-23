@@ -369,3 +369,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+/* =========================
+   FIX YOUTUBE IFRAMES RENDER
+========================= */
+const youtubeFrames = document.querySelectorAll(".video-shell iframe");
+
+const refreshYoutubeFrames = () => {
+  youtubeFrames.forEach((iframe) => {
+    const src = iframe.getAttribute("src");
+    if (!src) return;
+
+    iframe.style.opacity = "0.99";
+
+    requestAnimationFrame(() => {
+      iframe.style.opacity = "1";
+    });
+  });
+};
+
+if (youtubeFrames.length > 0) {
+  window.addEventListener("load", () => {
+    setTimeout(refreshYoutubeFrames, 300);
+    setTimeout(refreshYoutubeFrames, 900);
+  });
+
+  window.addEventListener("resize", refreshYoutubeFrames);
+}
