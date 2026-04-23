@@ -53,7 +53,7 @@ body {
     linear-gradient(180deg, #191617 0%, #231f20 48%, #1d1a1a 100%);
   color: var(--text);
   min-height: 100vh;
-  line-height: 1.7;
+  line-height: 1.8;
   overflow-x: hidden;
 }
 
@@ -108,7 +108,7 @@ h6 {
 }
 
 .container {
-  width: min(var(--container), calc(100% - 32px));
+  width: min(var(--container), calc(100% - 40px));
   margin-inline: auto;
 }
 
@@ -321,21 +321,21 @@ h6 {
    GENERIC SECTIONS
 ========================= */
 .section {
-  padding: 38px 0;
+  padding: 56px 0;
 }
 
 .section-last {
-  padding-bottom: 74px;
+  padding-bottom: 84px;
 }
 
 .section-head {
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 }
 
 .section-head h2 {
-  margin: 10px 0 0;
-  font-size: clamp(1.7rem, 3vw, 2.8rem);
-  line-height: 1.2;
+  margin: 12px 0 0;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.22;
 }
 
 .centered-head {
@@ -376,21 +376,21 @@ h6 {
    HERO GENERIC
 ========================= */
 .hero-section {
-  padding: 68px 0 30px;
+  padding: 72px 0 40px;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
   align-items: center;
-  gap: 34px;
+  gap: 46px;
   min-height: calc(100vh - var(--header-height) - 10px);
 }
 
 .hero-copy h1 {
-  margin: 12px 0 14px;
-  font-size: clamp(2.3rem, 5vw, 4.5rem);
-  line-height: 1.08;
+  margin: 14px 0 16px;
+  font-size: clamp(2.3rem, 5vw, 4.4rem);
+  line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
@@ -406,7 +406,7 @@ h6 {
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 24px;
+  margin-top: 26px;
 }
 
 .hero-visual {
@@ -438,20 +438,20 @@ h6 {
    HOME PREMIUM HERO
 ========================= */
 .hero-premium {
-  padding: 70px 0 30px;
+  padding: 72px 0 40px;
 }
 
 .hero-premium-grid {
   display: grid;
   grid-template-columns: 1fr 1.05fr;
   align-items: center;
-  gap: 30px;
+  gap: 34px;
   min-height: calc(100vh - var(--header-height));
 }
 
 .hero-premium-copy h1 {
   font-size: clamp(2.6rem, 6vw, 5rem);
-  line-height: 1.02;
+  line-height: 1.04;
   margin: 12px 0 18px;
 }
 
@@ -548,26 +548,26 @@ h6 {
    TRUST STRIP
 ========================= */
 .trusted-strip {
-  padding-top: 12px;
+  padding-top: 10px;
 }
 
 .trusted-inner {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+  gap: 14px;
 }
 
 .trusted-inner span {
   display: grid;
   place-items: center;
-  min-height: 64px;
+  min-height: 68px;
   border-radius: 18px;
   background: rgba(240, 238, 231, 0.025);
   border: 1px solid rgba(183, 157, 101, 0.1);
   color: var(--muted);
   font-weight: 700;
   text-align: center;
-  padding: 10px;
+  padding: 12px;
 }
 
 /* =========================
@@ -604,7 +604,7 @@ h6 {
 .offer-card,
 .value-card,
 .testimonial-card {
-  padding: 22px;
+  padding: 24px;
   transition:
     transform var(--transition),
     border-color var(--transition),
@@ -710,7 +710,7 @@ h6 {
 .works-preview,
 .footer-grid {
   display: grid;
-  gap: 18px;
+  gap: 20px;
 }
 
 .card-grid {
@@ -735,7 +735,7 @@ h6 {
 .story-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 20px;
 }
 
 .story-strip-strong .story-step {
@@ -771,7 +771,7 @@ h6 {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 20px;
 }
 
 .service-card {
@@ -791,19 +791,19 @@ h6 {
 }
 
 .service-card-image {
-  padding: 18px 18px 0;
+  padding: 20px 20px 0;
 }
 
 .service-card-image img {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 20px;
   border: 1px solid rgba(183, 157, 101, 0.1);
 }
 
 .service-card-body {
-  padding: 18px 18px 22px;
+  padding: 20px 20px 24px;
 }
 
 .service-card-body h3 {
@@ -813,7 +813,7 @@ h6 {
 
 .service-card-body p {
   color: var(--muted);
-  line-height: 1.9;
+  line-height: 1.95;
   margin-bottom: 14px;
 }
 
@@ -835,16 +835,23 @@ h6 {
 .service-slider {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(290px, 1fr);
-  gap: 18px;
+  grid-auto-columns: minmax(300px, 1fr);
+  gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 8px;
+  padding: 6px 2px 10px;
   scrollbar-width: none;
+  cursor: grab;
 }
 
 .service-slider::-webkit-scrollbar {
   display: none;
+}
+
+.service-slider.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+  scroll-behavior: auto;
 }
 
 .service-slide {
@@ -914,7 +921,7 @@ h6 {
 .feature-split-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  gap: 28px;
   align-items: center;
 }
 
@@ -930,7 +937,7 @@ h6 {
 
 .feature-text-block h2 {
   font-size: clamp(1.8rem, 4vw, 3rem);
-  line-height: 1.15;
+  line-height: 1.18;
   margin: 14px 0 16px;
 }
 
@@ -942,7 +949,7 @@ h6 {
 .feature-bullets {
   display: grid;
   gap: 14px;
-  margin-top: 22px;
+  margin-top: 24px;
 }
 
 .feature-bullet {
@@ -960,6 +967,7 @@ h6 {
 
 .feature-bullet span {
   color: var(--muted);
+  line-height: 1.85;
 }
 
 /* =========================
@@ -968,7 +976,7 @@ h6 {
 .value-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  gap: 20px;
 }
 
 .value-number {
@@ -1033,7 +1041,7 @@ h6 {
 }
 
 .work-meta {
-  padding-top: 12px;
+  padding-top: 14px;
 }
 
 .work-card h3,
@@ -1047,14 +1055,14 @@ h6 {
 .work-card p,
 .portfolio-card-body p {
   color: var(--muted);
-  line-height: 1.9;
+  line-height: 1.92;
   margin-bottom: 0;
 }
 
 .works-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  gap: 20px;
 }
 
 .portfolio-card {
@@ -1107,7 +1115,7 @@ h6 {
 .two-col-layout {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  gap: 20px;
 }
 
 .deep-card h3 {
@@ -1158,7 +1166,7 @@ h6 {
 
 .faq-list {
   display: grid;
-  gap: 12px;
+  gap: 14px;
 }
 
 .faq-item {
@@ -1190,7 +1198,7 @@ h6 {
 .offers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 20px;
 }
 
 .offer-card {
@@ -1253,7 +1261,7 @@ h6 {
    CTA
 ========================= */
 .cta-box {
-  padding: 26px;
+  padding: 30px;
   background:
     radial-gradient(circle at top, rgba(183, 157, 101, 0.1), transparent 40%),
     linear-gradient(180deg, rgba(45, 40, 36, 0.94), rgba(29, 26, 26, 0.94));
@@ -1269,18 +1277,19 @@ h6 {
 .contact-layout {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: 18px;
+  gap: 20px;
+  align-items: start;
 }
 
 .contact-form,
 .contact-info-card {
-  padding: 22px;
+  padding: 24px;
 }
 
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 18px;
 }
 
 .form-group {
@@ -1325,7 +1334,7 @@ h6 {
 }
 
 .form-actions {
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 .form-note {
@@ -1393,7 +1402,7 @@ h6 {
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 20px;
 }
 
 .testimonial-card p {
@@ -1412,6 +1421,7 @@ h6 {
 .footer {
   border-top: 1px solid var(--line);
   background: rgba(25, 22, 23, 0.8);
+  margin-top: 10px;
 }
 
 .footer-logo {
@@ -1592,6 +1602,12 @@ body.menu-open {
     position: static;
     margin-top: 12px;
   }
+
+  .hero-visual img,
+  .hero-main-frame img {
+    max-width: 760px;
+    margin-inline: auto;
+  }
 }
 
 @media (max-width: 820px) {
@@ -1628,7 +1644,7 @@ body.menu-open {
 
   .hero-section,
   .hero-premium {
-    padding-top: 38px;
+    padding-top: 42px;
   }
 
   .hero-copy h1,
@@ -1660,18 +1676,17 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 
-  .hero-mini-points,
   .hero-stat-row {
     flex-direction: column;
     align-items: stretch;
   }
 
   .section {
-    padding: 30px 0;
+    padding: 42px 0;
   }
 
   .section-last {
-    padding-bottom: 56px;
+    padding-bottom: 62px;
   }
 
   .footer-bottom {
@@ -1689,6 +1704,19 @@ body.menu-open {
 
   .slider-arrow {
     display: none;
+  }
+
+  .service-card-image,
+  .service-card-body,
+  .contact-form,
+  .contact-info-card,
+  .portfolio-card-body {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .service-card-image {
+    padding-top: 18px;
   }
 }
 
@@ -1776,12 +1804,4 @@ body.menu-open {
     opacity: 1;
     transform: none;
   }
-}
-.service-slider.is-dragging {
-  cursor: grabbing;
-  user-select: none;
-  scroll-behavior: auto;
-}
-.service-slider {
-  cursor: grab;
 }
