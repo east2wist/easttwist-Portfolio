@@ -6,211 +6,339 @@
 
   <title>من نحن | إيست تويست</title>
 
-  <meta name="description" content="تعرف على إيست تويست، وكالة تسويق ودعاية وإعلان في الدمام تبني حضورًا بصريًا ورقميًا متكاملًا للعلامات التجارية." />
+  <meta
+    name="description"
+    content="تعرف على إيست تويست، وكالة تسويق ودعاية وإعلان في الدمام تبني حضورًا بصريًا ورقميًا متكاملًا للعلامات التجارية في المنطقة الشرقية."
+  />
+  <meta
+    name="keywords"
+    content="من نحن إيست تويست, وكالة تسويق الدمام, شركة دعاية وإعلان الشرقية, هوية إيست تويست, فريق تسويق الدمام"
+  />
+  <meta name="theme-color" content="#231f20" />
+
+  <meta property="og:title" content="من نحن | إيست تويست" />
+  <meta
+    property="og:description"
+    content="إيست تويست وكالة تسويق ودعاية وإعلان في الدمام تبني حضورًا بصريًا ورقميًا متكاملًا للشركات في المنطقة الشرقية."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_SA" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="styles.css" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://east2wist.github.io/easttwist-Portfolio/about.html" />
 </head>
-
-<body class="page-inner">
-
-  <!-- Background -->
-  <div class="site-bg">
+<body class="page-about">
+  <div class="site-bg" aria-hidden="true">
     <span class="glow glow-a"></span>
     <span class="glow glow-b"></span>
+    <span class="grid-noise"></span>
   </div>
 
-  <!-- Header -->
-  <header class="header">
+  <header class="header" id="top">
     <div class="container header-inner">
-
-      <a href="index.html" class="logo">
-        <span class="logo-badge"></span>
+      <a href="index.html" class="logo" aria-label="إيست تويست">
+        <span class="logo-badge logo-badge-svg" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="4.5" fill="#b79d65"></circle>
+            <path d="M4 12c2.6-2.4 5.4-3.6 8-3.6s5.4 1.2 8 3.6c-2.6 2.4-5.4 3.6-8 3.6S6.6 14.4 4 12Z" stroke="#f0eee7" stroke-width="1.5"></path>
+            <path d="M8.2 7.1c2.1-.7 4.2-.7 6.3 0" stroke="#f0eee7" stroke-width="1.4" stroke-linecap="round"></path>
+          </svg>
+        </span>
         <span>
           <strong>EastTwist</strong>
           <small>إيست تويست</small>
         </span>
       </a>
 
-      <button class="menu-toggle">☰</button>
+      <button class="menu-toggle" type="button" aria-label="فتح القائمة">☰</button>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="التنقل الرئيسي">
         <a href="index.html" class="nav-link">الرئيسية</a>
-        <a href="about.html" class="nav-link is-active">من نحن</a>
+        <a href="about.html" class="nav-link">من نحن</a>
         <a href="services.html" class="nav-link">الخدمات</a>
         <a href="works.html" class="nav-link">أعمالنا</a>
         <a href="offers.html" class="nav-link">العروض</a>
-        <a href="contact.html" class="nav-link">تواصل</a>
+        <a href="contact.html" class="nav-link">تواصل معنا</a>
       </nav>
 
-      <a class="btn btn-primary hide-mobile" href="contact.html">ابدأ الآن</a>
-
+      <a class="btn btn-primary btn-small hide-mobile" href="contact.html">
+        ابدأ معنا
+      </a>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="inner-hero">
-    <div class="container inner-hero-grid">
-
-      <div class="inner-hero-text reveal">
-        <span class="eyebrow">من نحن</span>
-        <h1>نحن لا نصمم فقط… نحن نعيد تشكيل كيف يُرى البراند</h1>
-        <p>
-          إيست تويست ليست مجرد جهة تنفيذ، بل شريك يفهم كيف تتحول الفكرة
-          إلى صورة، والصورة إلى انطباع، والانطباع إلى قرار.
-        </p>
-      </div>
-
-      <div class="inner-hero-image reveal">
-        <img src="assets/scene-about.webp" alt="رؤية مستقبلية للبراند">
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Story -->
-  <section class="section">
-    <div class="container reveal">
-
-      <div class="feature-split-grid">
-
-        <div class="feature-image-card card">
-          <img src="assets/about-story-visual.webp" alt="قصة إيست تويست">
-        </div>
-
-        <div class="feature-text-block">
-          <h2>كل براند عنده قصة… لكن مش كل براند بيعرف يحكيها صح</h2>
-
-          <p>
-            في السوق، الفرق بين براند ناجح وبراند عادي مش دايمًا في المنتج،
-            لكن في الصورة والانطباع الأول.
+  <main>
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">من نحن</span>
+          <h1>نحن لا نصمم فقط… نحن نعيد تشكيل الطريقة التي يُرى بها البراند</h1>
+          <p class="hero-lead">
+            إيست تويست ليست مجرد جهة تنفيذ، بل شريك يفهم كيف تتحول الفكرة إلى صورة،
+            والصورة إلى انطباع، والانطباع إلى قرار. نحن نبني حضورًا أكثر وضوحًا
+            وحداثة للعلامات التي تريد أن تظهر بالمستوى الذي تستحقه.
           </p>
 
-          <p>
-            هنا بدأ دورنا… نساعد الشركات تظهر بالشكل اللي يعكس قيمتها
-            الحقيقية، ويخلي العميل يفهمها بسرعة ويثق فيها.
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html">ابدأ معنا</a>
+            <a class="btn btn-secondary" href="services.html">استكشف الخدمات</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <img src="assets/scene-about.webp" alt="رؤية مستقبلية تعبر عن هوية إيست تويست" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section trusted-strip">
+      <div class="container">
+        <div class="trusted-inner reveal">
+          <span>رؤية أوضح</span>
+          <span>تفكير استراتيجي</span>
+          <span>تنفيذ بصري حديث</span>
+          <span>حضور أكثر قوة</span>
+          <span>صورة تليق بالبراند</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <div class="feature-split-grid">
+          <div class="feature-image-card card">
+            <img src="assets/about-story-visual.webp" alt="قصة إيست تويست" />
+          </div>
+
+          <div class="feature-text-block">
+            <span class="eyebrow">قصتنا</span>
+            <h2>كل براند لديه قصة… لكن ليس كل براند يعرف كيف يقدّمها بالشكل الصحيح</h2>
+
+            <p>
+              في السوق، لا يكون الفرق دائمًا في المنتج أو الخدمة فقط، بل في الصورة
+              والانطباع الأول. هناك علامات كثيرة تملك قيمة حقيقية، لكنها لا تظهر
+              بالصورة التي تعكس هذه القيمة أمام العميل.
+            </p>
+
+            <p>
+              من هنا بدأ دور إيست تويست: أن نساعد الشركات على الظهور بشكل يليق
+              بمستوى عملها الحقيقي، وأن نبني تجربة بصرية ورسائل أوضح تجعل العميل
+              يفهم البراند بسرعة ويشعر بالثقة تجاهه من اللحظة الأولى.
+            </p>
+
+            <div class="feature-bullets">
+              <div class="feature-bullet">
+                <strong>نفهم قبل أن ننفذ</strong>
+                <span>نقرأ النشاط والسوق وطريقة تموضع العلامة قبل أي خطوة تصميمية أو تسويقية</span>
+              </div>
+              <div class="feature-bullet">
+                <strong>نبني صورة متماسكة</strong>
+                <span>نربط الهوية والمحتوى والموقع والإعلانات ضمن رؤية واحدة واضحة</span>
+              </div>
+              <div class="feature-bullet">
+                <strong>نوجّه الشكل نحو النتيجة</strong>
+                <span>حتى لا يبقى التنفيذ جميلًا فقط، بل مفيدًا ومؤثرًا أيضًا</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark-panel">
+      <div class="container reveal">
+        <div class="section-head centered-head">
+          <span class="eyebrow">رؤيتنا</span>
+          <h2>نريد أن تكون كل علامة في السوق أكثر وضوحًا… وأكثر قوة… وأكثر تميزًا</h2>
+          <p class="section-paragraph section-narrow">
+            نؤمن أن العلامة القوية لا تحتاج فقط إلى خدمة جيدة، بل تحتاج أيضًا إلى
+            طريقة عرض تجعل العميل يشعر بقيمتها بسرعة، ويراها في مستوى احترافي يليق بها.
+          </p>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-card">
+            <div class="value-number">01</div>
+            <h3>وضوح</h3>
+            <p>أن يفهم العميل ما تقدمه بسرعة، وأن تصل الرسالة دون ارتباك أو تشتيت.</p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-number">02</div>
+            <h3>ثقة</h3>
+            <p>أن يشعر العميل أن هذا البراند احترافي، متماسك، ويستحق الاهتمام.</p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-number">03</div>
+            <h3>تميّز</h3>
+            <p>أن لا تبدو مثل الآخرين، بل تظهر بهوية واضحة وشخصية خاصة في السوق.</p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-number">04</div>
+            <h3>استمرارية</h3>
+            <p>أن يعمل الحضور البصري والرقمي كمنظومة متماسكة قابلة للنمو والتوسع.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <div class="section-head centered-head">
+          <span class="eyebrow">كيف نعمل</span>
+          <h2>طريقة عملنا تبدأ بالفهم… ثم البناء… ثم الإطلاق</h2>
+          <p class="section-paragraph section-narrow">
+            نحن لا نقفز مباشرة إلى التنفيذ، بل نرتب الصورة أولًا حتى يكون كل ما
+            يُبنى بعد ذلك أكثر دقة وفاعلية واتساقًا.
+          </p>
+        </div>
+
+        <div class="value-grid">
+          <article class="value-card">
+            <div class="value-number">01</div>
+            <h3>نفهم</h3>
+            <p>نحلل النشاط والسوق والجمهور والصورة الحالية للعلامة.</p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-number">02</div>
+            <h3>نصمم</h3>
+            <p>نبني هوية ورسالة وتجربة بصرية قوية ومتماسكة تخدم موقع العلامة.</p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-number">03</div>
+            <h3>ننطلق</h3>
+            <p>نحوّل الفكرة إلى حضور حيّ ومؤثر عبر المحتوى والموقع والإعلان والتنفيذ.</p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-number">04</div>
+            <h3>نطوّر</h3>
+            <p>نراقب الشكل العام ونرتّب الخطوة التالية حتى يستمر البراند في النمو.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-last">
+      <div class="container reveal">
+        <div class="cta-box cta-box-strong">
+          <div class="section-head centered-head">
+            <span class="eyebrow">ابدأ معنا</span>
+            <h2>جاهز تبني صورة أقوى لبراندك؟</h2>
+          </div>
+
+          <p class="section-paragraph section-narrow">
+            إذا كنت تريد أن يظهر نشاطك بالمستوى الذي يعكس قيمته الحقيقية، فهذه هي
+            اللحظة المناسبة لنبدأ معًا في بناء حضور يليق بك ويؤثر في السوق.
           </p>
 
+          <div class="hero-actions center-actions">
+            <a class="btn btn-primary" href="contact.html">ابدأ الآن</a>
+            <a class="btn btn-secondary" href="services.html">استكشف الخدمات</a>
+          </div>
         </div>
-
       </div>
+    </section>
+  </main>
 
-    </div>
-  </section>
-
-  <!-- Vision -->
-  <section class="section section-dark-panel">
-    <div class="container reveal">
-
-      <div class="section-head centered-head">
-        <span class="eyebrow">رؤيتنا</span>
-        <h2>نريد أن تكون كل علامة في السوق واضحة… قوية… ومختلفة</h2>
-      </div>
-
-      <div class="value-grid">
-
-        <div class="value-card">
-          <h3>وضوح</h3>
-          <p>أن يفهم العميل ما تقدمه خلال ثواني</p>
-        </div>
-
-        <div class="value-card">
-          <h3>ثقة</h3>
-          <p>أن يشعر أن هذا البراند احترافي ويستحق</p>
-        </div>
-
-        <div class="value-card">
-          <h3>تميّز</h3>
-          <p>أن لا يشبهك أحد في السوق</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Approach -->
-  <section class="section">
-    <div class="container reveal">
-
-      <div class="section-head centered-head">
-        <span class="eyebrow">كيف نعمل</span>
-        <h2>طريقة عملنا مبنية على الفهم قبل التنفيذ</h2>
-      </div>
-
-      <div class="value-grid">
-
-        <div class="value-card">
-          <div class="value-number">01</div>
-          <h3>نفهم</h3>
-          <p>نحلل نشاطك وسوقك والجمهور</p>
-        </div>
-
-        <div class="value-card">
-          <div class="value-number">02</div>
-          <h3>نصمم</h3>
-          <p>نخلق صورة بصرية قوية ومتماسكة</p>
-        </div>
-
-        <div class="value-card">
-          <div class="value-number">03</div>
-          <h3>ننطلق</h3>
-          <p>نحول العمل إلى نتائج فعلية</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section section-last">
-    <div class="container reveal">
-
-      <div class="cta-box">
-
-        <h2>جاهز تبني صورة أقوى لبراندك؟</h2>
-
-        <p>
-          خلينا نشتغل مع بعض ونبني حضور يليق بمستوى شغلك الحقيقي.
-        </p>
-
-        <div class="hero-actions center-actions">
-          <a class="btn btn-primary" href="contact.html">ابدأ الآن</a>
-          <a class="btn btn-secondary" href="services.html">استكشف الخدمات</a>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-grid">
-
       <div>
-        <h3>EastTwist</h3>
-        <p>وكالة تسويق ودعاية في الدمام</p>
+        <div class="logo footer-logo">
+          <span class="logo-badge logo-badge-svg" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="4.5" fill="#b79d65"></circle>
+              <path d="M4 12c2.6-2.4 5.4-3.6 8-3.6s5.4 1.2 8 3.6c-2.6 2.4-5.4 3.6-8 3.6S6.6 14.4 4 12Z" stroke="#f0eee7" stroke-width="1.5"></path>
+              <path d="M8.2 7.1c2.1-.7 4.2-.7 6.3 0" stroke="#f0eee7" stroke-width="1.4" stroke-linecap="round"></path>
+            </svg>
+          </span>
+          <span>
+            <strong>EastTwist</strong>
+            <small>إيست تويست</small>
+          </span>
+        </div>
+
+        <p class="muted">
+          وكالة تسويق ودعاية وإعلان في الدمام، تبني حضورًا رقميًا وميدانيًا متكاملًا
+          للشركات في المنطقة الشرقية بأسلوب بصري حديث وسرد احترافي.
+        </p>
       </div>
 
       <div>
-        <h3>روابط</h3>
-        <a href="index.html">الرئيسية</a><br>
-        <a href="services.html">الخدمات</a><br>
-        <a href="works.html">الأعمال</a>
+        <h3>التنقل</h3>
+        <div class="footer-links">
+          <a href="index.html">الرئيسية</a>
+          <a href="about.html">من نحن</a>
+          <a href="services.html">الخدمات</a>
+          <a href="works.html">أعمالنا</a>
+          <a href="offers.html">العروض</a>
+          <a href="contact.html">تواصل معنا</a>
+        </div>
       </div>
 
       <div>
-        <h3>تواصل</h3>
-        <p>+966 56 703 1077</p>
+        <h3>أبرز الخدمات</h3>
+        <div class="footer-links">
+          <a href="social-media-management.html">إدارة السوشيال ميديا</a>
+          <a href="web-design-development.html">تصميم المواقع</a>
+          <a href="paid-ads.html">الإعلانات الممولة</a>
+          <a href="branding-design.html">الهوية البصرية</a>
+        </div>
       </div>
 
+      <div>
+        <h3>تواصل سريع</h3>
+        <ul class="contact-list">
+          <li>
+            واتساب:
+            <a href="https://wa.me/966567031077" target="_blank" rel="noopener">
+              +966 56 703 1077
+            </a>
+          </li>
+          <li>المنطقة: الدمام - المنطقة الشرقية - المملكة العربية السعودية</li>
+          <li>
+            إنستغرام:
+            <a href="https://www.instagram.com/easttwistksa/" target="_blank" rel="noopener">
+              @easttwistksa
+            </a>
+          </li>
+          <li>
+            يوتيوب:
+            <a href="https://www.youtube.com/@easttwistksa" target="_blank" rel="noopener">
+              قناة الأعمال
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 جميع الحقوق محفوظة لـ إيست تويست - الدمام - المنطقة الشرقية</p>
+      <a href="#top" class="to-top">العودة للأعلى ↗</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <a
+    href="https://wa.me/966567031077"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="تواصل عبر واتساب"
+  >
+    💬
+  </a>
 
+  <script src="script.js"></script>
 </body>
 </html>
