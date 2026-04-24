@@ -396,3 +396,24 @@ if (youtubeFrames.length > 0) {
 
   window.addEventListener("resize", refreshYoutubeFrames);
 }
+
+/* =========================
+   YOUTUBE TAP TO LOAD
+========================= */
+document.querySelectorAll(".youtube-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    const videoId = card.dataset.video;
+    if (!videoId) return;
+
+    const iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1`;
+    iframe.title = "YouTube video player";
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+
+    card.innerHTML = "";
+    card.appendChild(iframe);
+  });
+});
