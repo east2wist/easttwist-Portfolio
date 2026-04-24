@@ -416,4 +416,82 @@ document.querySelectorAll(".youtube-card").forEach((card) => {
     card.innerHTML = "";
     card.appendChild(iframe);
   });
+/* =========================
+   WORKS CAROUSEL + MODAL VIDEO
+========================= */
+const worksCarousel = document.getElementById("worksCarousel");
+const worksPrev = document.querySelector(".works-prev");
+const worksNext = document.querySelector(".works-next");
+const videoModal = document.getElementById("videoModal");
+const videoModalFrame = document.getElementById("videoModalFrame");
+const videoModalClose = document.querySelector(".video-modal-close");
+const workCards = document.querySelectorAll(".work-glass-card");
+
+if (worksCarousel && worksPrev && worksNext) {
+  const getScrollAmount = () => {
+    const card = worksCarousel.querySelector(".work-glass-card");
+    return card ? card.offsetWidth + 22 : 360;
+  };
+
+  worksPrev.addEventListener("click", () => {
+    worksCarousel.scrollBy({
+      left: getScrollAmount(),
+      behavior: "smooth",
+    });
+  });
+
+  worksNext.addEventListener("click", () => {
+    worksCarousel.scrollBy({
+      left: -getScrollAmount(),
+      behavior: "smooth",
+    });
+  });
+}
+
+const closeVideoModal = () => {
+  if (!videoModal || !videoModalFrame) return;
+  videoModal.classList.remove("is-open");
+  videoModal.setAttribute("aria-hidden", "true");
+  videoModalFrame.innerHTML = "";
+  document.body.classList.remove("menu-open");
+};
+
+if (videoModal && videoModalFrame && workCards.length > 0) {
+  workCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const videoId = card.dataset.video;
+      if (!videoId) return;
+
+      videoModalFrame.innerHTML = `
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      `;
+
+      videoModal.classList.add("is-open");
+      videoModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("menu-open");
+    });
+  });
+
+  videoModal.addEventListener("click", (event) => {
+    if (event.target === videoModal) {
+      closeVideoModal();
+    }
+  });
+
+  if (videoModalClose) {
+    videoModalClose.addEventListener("click", closeVideoModal);
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeVideoModal();
+    }
+  });
+}
 });
