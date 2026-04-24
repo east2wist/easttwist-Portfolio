@@ -2068,3 +2068,114 @@ body.menu-open {
     margin: 14px;
   }
 }
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* =========================
+   PREMIUM FOOTER V2
+========================= */
+.footer {
+  margin-top: auto;
+  background: #f0eee7;
+  color: #231f20;
+  border-top: 1px solid rgba(183, 157, 101, 0.35);
+}
+
+.footer .muted,
+.footer p,
+.footer li,
+.footer small {
+  color: rgba(35, 31, 32, 0.72);
+}
+
+.footer .logo strong,
+.footer h3,
+.footer a {
+  color: #231f20;
+}
+
+.footer .logo-badge {
+  background: #231f20;
+  border-color: rgba(35, 31, 32, 0.18);
+}
+
+.footer .logo-badge svg circle {
+  fill: #b79d65;
+}
+
+.footer .logo-badge svg path {
+  stroke: #f0eee7;
+}
+
+.footer-grid {
+  padding: 42px 0 28px;
+}
+
+.footer-links a {
+  background: rgba(35, 31, 32, 0.06);
+  color: #231f20;
+  border: 1px solid rgba(35, 31, 32, 0.08);
+}
+
+.footer-links a:hover {
+  background: #231f20;
+  color: #f0eee7;
+}
+
+.contact-list a {
+  color: #231f20;
+  font-weight: 800;
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.footer-social a {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #231f20;
+  color: #f0eee7;
+  border: 1px solid rgba(35, 31, 32, 0.15);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: translateY(-3px);
+  background: #b79d65;
+  color: #231f20;
+}
+
+.footer-social svg {
+  width: 21px;
+  height: 21px;
+  fill: currentColor;
+}
+
+.footer-bottom {
+  color: rgba(35, 31, 32, 0.7);
+  border-top: 1px solid rgba(35, 31, 32, 0.08);
+}
+
+.footer-bottom .to-top {
+  color: #231f20;
+  font-weight: 900;
+}
