@@ -2296,3 +2296,61 @@ main {
     animation: none;
   }
 }
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.header,
+main,
+.footer {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.logo {
+  max-width: max-content;
+}
+
+.header-logo {
+  width: 54px !important;
+  height: 54px !important;
+  max-width: 54px !important;
+  max-height: 54px !important;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.footer-real-logo {
+  width: 74px !important;
+  height: 74px !important;
+  max-width: 74px !important;
+  max-height: 74px !important;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.logo img {
+  flex-shrink: 0;
+}
+
+@media (max-width: 560px) {
+  .header-logo {
+    width: 48px !important;
+    height: 48px !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
+  }
+
+  .footer-real-logo {
+    width: 64px !important;
+    height: 64px !important;
+    max-width: 64px !important;
+    max-height: 64px !important;
+  }
+}
