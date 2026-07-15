@@ -1,0 +1,12 @@
+/* Local iOS-safe gallery and mobile carousel */
+.work-swipe-hint{display:none;color:var(--gold2);font-size:.82rem;font-weight:800;margin:-22px 0 24px}
+#work .local-work-image{display:block!important;opacity:1!important;visibility:visible!important;width:100%;height:100%;object-fit:cover;object-position:center top;background:#191310}
+@media(max-width:700px){
+  #work .work-swipe-hint{display:block}
+  #work .work-grid{display:flex!important;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:2px 4px 16px;margin-inline:-4px;scrollbar-width:none}
+  #work .work-grid::-webkit-scrollbar{display:none}
+  #work .work-card{flex:0 0 min(78vw,330px);width:min(78vw,330px);aspect-ratio:4/5;scroll-snap-align:center;scroll-snap-stop:always}
+  #work .work-card:first-child{margin-inline-start:2px}
+  #work .work-card:last-child{margin-inline-end:14px}
+  #work .image-cta-hint{display:none}
+}
