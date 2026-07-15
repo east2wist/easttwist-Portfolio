@@ -1,0 +1,44 @@
+name: Sync marketing gallery images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-marketing-gallery.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download gallery images from Drive
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p digital-marketing/assets/work
+          curl -L --fail --retry 4 --retry-delay 3 'https://drive.google.com/thumbnail?id=1MxmDjbnrdGFcvzBsQpbWVxcwENpcHc-E&sz=w1600' -o digital-marketing/assets/work/work-01.jpg
+          curl -L --fail --retry 4 --retry-delay 3 'https://drive.google.com/thumbnail?id=1kxmOYvFMaqnHsTVLq07YaRDo0cFsCrJr&sz=w1600' -o digital-marketing/assets/work/work-02.jpg
+          curl -L --fail --retry 4 --retry-delay 3 'https://drive.google.com/thumbnail?id=1zHyiOGxwj0doUQWnfhSJIty5MwnbNz16&sz=w1600' -o digital-marketing/assets/work/work-03.jpg
+          curl -L --fail --retry 4 --retry-delay 3 'https://drive.google.com/thumbnail?id=1Scf6QUtseNnkeJggZH70Khf59cPGplLf&sz=w1600' -o digital-marketing/assets/work/work-04.jpg
+          curl -L --fail --retry 4 --retry-delay 3 'https://drive.google.com/thumbnail?id=1FWow_Plf-y3virUAHCAhcqiGo6LKXROw&sz=w1600' -o digital-marketing/assets/work/work-05.jpg
+          curl -L --fail --retry 4 --retry-delay 3 'https://drive.google.com/thumbnail?id=1p3SzEilWKS5TFWPFvWhuOx-pJJY3Npkc&sz=w1600' -o digital-marketing/assets/work/work-06.jpg
+          file digital-marketing/assets/work/*.jpg
+
+      - name: Commit local gallery images
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add digital-marketing/assets/work/*.jpg
+          if git diff --cached --quiet; then
+            echo 'No image changes to commit'
+          else
+            git commit -m 'Store marketing gallery images locally'
+            git push
+          fi
