@@ -1,17 +1,44 @@
 window.dataLayer=window.dataLayer||[];
 const driveUrls=id=>[
-  `https://drive.google.com/thumbnail?id=${id}&sz=w2000`,
   `https://lh3.googleusercontent.com/d/${id}=w2000`,
+  `https://drive.google.com/thumbnail?id=${id}&sz=w2000`,
   `https://drive.google.com/uc?export=view&id=${id}`
 ];
-document.querySelectorAll('img[data-drive-id]').forEach(img=>{
-  const urls=driveUrls(img.dataset.driveId);let index=0;
-  img.classList.add('image-loading');
-  const loadNext=()=>{if(index>=urls.length){img.onerror=null;img.classList.remove('image-loading');img.classList.add('image-error');return;}img.src=urls[index++];};
-  img.addEventListener('load',()=>img.classList.remove('image-loading'),{once:true});
-  img.addEventListener('error',loadNext);
-  loadNext();
+
+document.querySelectorAll('#work img[data-drive-id]').forEach(img=>{
+  img.loading='eager';
+  img.setAttribute('fetchpriority','high');
 });
+
+document.querySelectorAll('img[data-drive-id]').forEach(img=>{
+  const urls=driveUrls(img.dataset.driveId);
+  let index=0;
+  const markLoaded=()=>{
+    img.classList.remove('image-loading','image-error');
+    img.style.opacity='1';
+    img.style.visibility='visible';
+  };
+  const loadNext=()=>{
+    if(index>=urls.length){
+      img.onerror=null;
+      img.classList.remove('image-loading');
+      img.classList.add('image-error');
+      img.style.opacity='1';
+      img.style.visibility='visible';
+      return;
+    }
+    img.src=urls[index++];
+  };
+  img.classList.add('image-loading');
+  img.addEventListener('load',markLoaded);
+  img.addEventListener('error',loadNext);
+  if(img.complete && img.naturalWidth>0){
+    markLoaded();
+  }else{
+    loadNext();
+  }
+});
+
 const ENDPOINT='https://script.google.com/macros/s/AKfycbzuBfuMOFQC-0_WU8r62PY5l3MD4vDPfxN36w1WFe5uGD8yEtiRS086moiU0zbhNGF9/exec';
 const keys=['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
 const params=new URLSearchParams(location.search);
