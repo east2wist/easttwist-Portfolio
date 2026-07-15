@@ -28,6 +28,10 @@
 .work-card.is-clickable{border-color:rgba(217,180,101,.34)}
 .image-cta-hint{position:absolute;z-index:4;top:14px;left:14px;padding:8px 12px;border-radius:999px;background:rgba(17,13,11,.88);border:1px solid rgba(242,213,148,.38);color:var(--gold2);font-size:.72rem;font-weight:900;backdrop-filter:blur(8px)}
 
+/* Safari iOS: never leave gallery creatives hidden after cached/lazy image events */
+#work .drive-img,#work .work-image{opacity:1!important;visibility:visible!important;display:block!important;-webkit-transform:translateZ(0);transform:translateZ(0)}
+#work .work-card{contain:layout paint;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+
 .contact-wrap{align-items:start}
 .contact-wrap>div,.contact-wrap form{text-align:right}
 .contact-links a{text-align:right}
